@@ -11,3 +11,7 @@
 </p>
 
 <p align="center">少写点烂代码，多摸点真·鱼。加油！！！</p>
+
+<p align="center">
+  <img width="240px" src="public/slow.GIF" /> -> <img width="240px" src="public/fast.GIF" />
+</p>
