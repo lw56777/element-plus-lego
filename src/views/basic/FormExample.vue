@@ -121,7 +121,7 @@ const formItems: ComputedRef<TFormItem[]> = computed(() => [
   },
 ]);
 
-const lwFormRef = useTemplateRef('lwFormRef');
+const baFormRef = useTemplateRef('baFormRef');
 
 const {
   BaForm: BaFormComp,
@@ -143,8 +143,8 @@ const {
     </template>
   </BaForm>
 
-  <el-button type="primary" @click="lwFormRef?.validate">校验</el-button>
-  <el-button @click="lwFormRef?.resetFields">重置</el-button>
+  <el-button type="primary" @click="baFormRef?.validate">校验</el-button>
+  <el-button @click="baFormRef?.resetFields">重置</el-button>
 
   <el-divider>函数式</el-divider>
 
