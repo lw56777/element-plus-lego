@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { ElMessage, ElMessageBox } from 'element-plus';
+import { ElMessage } from 'element-plus';
 import { useTable } from '~/hooks/useTable';
 import type { TEmitsAttrs } from '~/components/BaSearch';
 import { useBaDialog } from '~/components/BaDialog';

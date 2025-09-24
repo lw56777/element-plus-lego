@@ -47,7 +47,7 @@ defineExpose({} as ComponentInstance<typeof ElTable>);
       </BaTableColumn>
     </el-table>
 
-    <div class="pagination-wrapper flex justify-end mt-10">
+    <div class="flex justify-end mt-10">
       <el-pagination
         v-model:currentPage="currentPage"
         v-model:page-size="pageSize"
