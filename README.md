@@ -8,7 +8,9 @@ Element Plus Pro 是一个基于 Vue3 + Element Plus 的开箱即用的二次封
 
 ## 🌐 演示地址
 
-[https://bricklayer-admin.vercel.app](https://bricklayer-admin.vercel.app)
+[查看文档](https://element-plus-pro.vercel.app/)
+
+[完整示例](https://bricklayer-admin.vercel.app)
 
 ## ✨ 特性
 
@@ -34,21 +36,8 @@ Element Plus Pro 是一个基于 Vue3 + Element Plus 的开箱即用的二次封
 
 项目提供了丰富的示例页面，帮助您快速了解各组件的使用方法：
 
-### 基础示例
-
-- **DialogExample** - 弹窗组件使用示例
-- **FormExample** - 表单组件使用示例
-- **SearchExample** - 搜索组件使用示例
-- **TableExample** - 表格组件使用示例
-
-### 实践示例
-
-- **ListExample** - 列表页面完整示例
-
----
-
 <p align="center">
-  <img width="100px" src="images/bricklaying.GIF" />
+  <img width="200px" src="images/bricklaying.GIF" />
 </p>
 
 <p align="center">少写点烂代码，多摸点真·鱼。加油！！！</p>
