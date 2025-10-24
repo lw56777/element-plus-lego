@@ -78,4 +78,4 @@ docs/
 - [VitePress](https://vitepress.dev/) - 静态站点生成器
 - [Vue 3](https://vuejs.org/) - 渐进式 JavaScript 框架
 - [Element Plus](https://element-plus.org/) - Vue 3 组件库
-- [Element Plus Pro](../packages/components/) - 基于 Element Plus 的高级组件库
+- **Element Plus Pro** - 基于 Element Plus 的高级组件库
