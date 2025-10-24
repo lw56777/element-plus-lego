@@ -7,7 +7,10 @@
   "scripts": {
     "dev": "pnpm --filter @element-plus-pro/play dev",
     "build": "pnpm --filter @element-plus-pro/play build",
-    "preview": "pnpm --filter @element-plus-pro/play preview"
+    "preview": "pnpm --filter @element-plus-pro/play preview",
+    "docs:dev": "pnpm --filter @element-plus-pro/docs dev",
+    "docs:build": "pnpm --filter @element-plus-pro/docs build",
+    "docs:preview": "pnpm --filter @element-plus-pro/docs preview"
   },
   "dependencies": {
     "vue": "^3.5.18",

@@ -40,7 +40,7 @@ const items: ComputedRef<TDescriptionsItem[]> = computed(() => [
       compType: () => h(ElTag, { type: 'warning' }, () => '状态'),
     },
     value: {
-      prop: 'stateValue',
+      prop: 'state',
       compType: () =>
         h(ElCheckboxGroup, {
           options: [

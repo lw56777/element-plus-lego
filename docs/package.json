@@ -1,0 +1,19 @@
+{
+  "name": "@element-plus-pro/docs",
+  "version": "1.0.0",
+  "description": "Element Plus Pro 组件库文档",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "element-plus": "^2.11.5",
+    "vitepress": "^1.6.4",
+    "vue": "^3.5.22"
+  },
+  "dependencies": {
+    "@element-plus-pro/components": "workspace:*",
+    "@element-plus/icons-vue": "^2.3.2"
+  }
+}
