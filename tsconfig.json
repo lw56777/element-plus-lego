@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "resolveJsonModule": true,
+    "strict": false,
+    "lib": ["ESNext", "DOM"],
+    "baseUrl": "./",
+    "paths": {
+      "@element-plus-pro/*": ["packages/*"]
+    }
+  }
+}
