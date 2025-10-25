@@ -9,7 +9,7 @@
   <a href="https://www.npmjs.com/package/element-plus-lego">
     <img src="https://img.shields.io/npm/dm/element-plus-lego.svg" alt="npm downloads">
   </a>
-  <a href="https://github.com/lw567/element-plus-pro/blob/main/LICENSE">
+  <a href="https://github.com/lw567/element-plus-lego/blob/main/LICENSE">
     <img src="https://img.shields.io/npm/l/element-plus-lego.svg" alt="license">
   </a>
 </p>

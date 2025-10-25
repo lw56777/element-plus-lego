@@ -1,6 +1,6 @@
 # 📦 发布指南
 
-本文档说明如何将 element-plus-pro 发布到 npm。
+本文档说明如何将 element-plus-lego 发布到 npm。
 
 ## 📋 发布前准备
 
@@ -14,15 +14,15 @@ npm login
 
 ### 2. 检查包名是否可用
 
-在发布之前，确保包名 `element-plus-pro` 在 npm 上可用。如果已被占用，需要在 `package.json` 中修改包名。
+在发布之前，确保包名 `element-plus-lego` 在 npm 上可用。如果已被占用，需要在 `package.json` 中修改包名。
 
 你可以在 npm 官网搜索或使用命令：
 
 ```bash
-npm view element-plus-pro
+npm view element-plus-lego
 ```
 
-如果包名不可用，可以使用带 scope 的包名，例如：`@your-username/element-plus-pro`
+如果包名不可用，可以使用带 scope 的包名，例如：`@your-username/element-plus-lego`
 
 ### 3. 更新版本号
 
@@ -45,18 +45,18 @@ npm version major
 
 ```json
 {
-  "name": "element-plus-pro",
+  "name": "element-plus-lego",
   "version": "1.0.0",
   "description": "Element Plus 二次封装组件库，提供更强大和易用的企业级组件",
   "author": "你的名字",
   "repository": {
     "type": "git",
-    "url": "https://github.com/你的用户名/element-plus-pro"
+    "url": "https://github.com/你的用户名/element-plus-lego"
   },
   "bugs": {
-    "url": "https://github.com/你的用户名/element-plus-pro/issues"
+    "url": "https://github.com/你的用户名/element-plus-lego/issues"
   },
-  "homepage": "https://github.com/你的用户名/element-plus-pro#readme"
+  "homepage": "https://github.com/你的用户名/element-plus-lego#readme"
 }
 ```
 
@@ -74,9 +74,9 @@ pnpm run build:lib
 
 构建完成后会在 `dist` 目录生成以下文件：
 
-- `element-plus-pro.es.js` - ES Module 格式
-- `element-plus-pro.cjs.js` - CommonJS 格式
-- `element-plus-pro.umd.js` - UMD 格式
+- `element-plus-lego.es.js` - ES Module 格式
+- `element-plus-lego.cjs.js` - CommonJS 格式
+- `element-plus-lego.umd.js` - UMD 格式
 - `index.d.ts` - TypeScript 类型声明文件
 - `style.css` - 样式文件（如果有）
 
@@ -109,7 +109,7 @@ pnpm publish --access public
 ### 1. 检查包是否发布成功
 
 ```bash
-npm view element-plus-pro
+npm view element-plus-lego
 ```
 
 ### 2. 在新项目中测试安装
@@ -120,7 +120,7 @@ npm init vue@latest test-project
 cd test-project
 
 # 安装你的包
-pnpm install element-plus-pro
+pnpm install element-plus-lego
 
 # 测试引入
 ```
@@ -164,7 +164,7 @@ npm version 1.0.0-beta.0
 npm publish --tag beta
 
 # 用户安装 beta 版本
-npm install element-plus-pro@beta
+npm install element-plus-lego@beta
 ```
 
 ## ⚠️ 注意事项
@@ -187,7 +187,7 @@ npm install element-plus-pro@beta
 
 ```json
 {
-  "name": "@your-username/element-plus-pro"
+  "name": "@your-username/element-plus-lego"
 }
 ```
 

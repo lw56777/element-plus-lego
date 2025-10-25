@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { h, computed, type ComponentInstance, type PropType } from 'vue';
 import { ElDescriptions, ElDescriptionsItem } from 'element-plus';
-import { isObject } from '@element-plus-pro/utils';
+import { isObject } from '@element-plus-lego/utils';
 import type { TDescriptionsItem } from '.';
 import Comp from './comp.vue';
 

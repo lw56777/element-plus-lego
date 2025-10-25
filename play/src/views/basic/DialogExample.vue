@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useEplDialog } from '@element-plus-pro/components';
+import { useEplDialog } from '@element-plus-lego/components';
 import DialogContent from '~/components/DialogContent.vue';
 
 const handleDialog = () => {

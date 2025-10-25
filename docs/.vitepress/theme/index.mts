@@ -3,7 +3,7 @@ import ElementPlus from 'element-plus';
 import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 import 'element-plus/dist/index.css';
 import 'element-plus/theme-chalk/dark/css-vars.css';
-import * as ElementPlusLego from '@element-plus-pro/components';
+import * as ElementPlusLego from '@element-plus-lego/components';
 import Demo from './components/demo.vue';
 
 export default {
@@ -18,7 +18,7 @@ export default {
 
     // 注册 Element Plus Lego 组件
     Object.keys(ElementPlusLego).forEach(key => {
-      if (key.startsWith('Elp')) {
+      if (key.startsWith('Epl')) {
         app.component(key, ElementPlusLego[key]);
       }
     });

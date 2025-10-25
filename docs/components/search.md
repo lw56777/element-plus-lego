@@ -69,7 +69,7 @@ const onRefresh = () => {
 ```vue
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { EplSearch } from '@element-plus-pro/components';
+import { EplSearch } from '@element-plus-lego/components';
 
 const params = ref({
   keywords: '',

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { h, ref, computed, type ComputedRef } from 'vue';
 import { ElTag, ElSwitch } from 'element-plus';
-import { EplTable, type TTableColumn } from '@element-plus-pro/components';
+import { EplTable, type TTableColumn } from '@element-plus-lego/components';
 import HeaderComp from '~/components/HeaderComp.vue';
 import AgeComp from '~/components/AgeComp.vue';
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, useAttrs } from 'vue';
 import { omit } from 'lodash-es';
-import { isFunction } from '@element-plus-pro/utils';
+import { isFunction } from '@element-plus-lego/utils';
 
 const loading = ref(false);
 

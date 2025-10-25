@@ -9,7 +9,7 @@ import {
   ElSelect,
   ElSwitch,
 } from 'element-plus';
-import { isString, isFunction } from '@element-plus-pro/utils';
+import { isString, isFunction } from '@element-plus-lego/utils';
 
 const componentMap: Record<string, any> = {
   button: ElButton,

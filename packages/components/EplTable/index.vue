@@ -2,7 +2,7 @@
 import { computed, type ComponentInstance, type PropType } from 'vue';
 import { ElTable } from 'element-plus';
 import { omit } from 'lodash-es';
-import type { TPageProps } from '@element-plus-pro/hooks';
+import type { TPageProps } from '@element-plus-lego/hooks';
 import { EplTableColumn, type TTableColumn } from '../EplTableColumn';
 
 const props = defineProps({

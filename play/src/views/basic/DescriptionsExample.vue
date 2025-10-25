@@ -4,7 +4,7 @@ import { ElCheckboxGroup, ElTag } from 'element-plus';
 import {
   EplDescriptions,
   type TDescriptionsItem,
-} from '@element-plus-pro/components';
+} from '@element-plus-lego/components';
 import HeaderComp from '~/components/HeaderComp.vue';
 import AgeComp from '~/components/AgeComp.vue';
 

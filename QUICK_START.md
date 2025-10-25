@@ -2,16 +2,16 @@
 
 ## ✅ 配置已完成
 
-恭喜！你的 `element-plus-pro` 包已经完全配置好，可以发布到 npm 了！
+恭喜！你的 `element-plus-lego` 包已经完全配置好，可以发布到 npm 了！
 
 ### 📊 构建结果
 
 构建成功，生成以下文件：
 
-- ✅ `element-plus-pro.es.js` (22KB) - ES Module 格式
-- ✅ `element-plus-pro.cjs.js` (16KB) - CommonJS 格式
-- ✅ `element-plus-pro.umd.js` (16KB) - UMD 格式
-- ✅ `element-plus-pro.css` (158B) - 样式文件
+- ✅ `element-plus-lego.es.js` (22KB) - ES Module 格式
+- ✅ `element-plus-lego.cjs.js` (16KB) - CommonJS 格式
+- ✅ `element-plus-lego.umd.js` (16KB) - UMD 格式
+- ✅ `element-plus-lego.css` (158B) - 样式文件
 - ✅ `index.d.ts` + 完整的类型声明文件
 
 ## 🎯 立即发布 3 步走
@@ -24,7 +24,7 @@
 {
   "author": "你的名字", // 👈 改成你的名字
   "repository": {
-    "url": "https://github.com/你的用户名/element-plus-pro" // 👈 改成你的 GitHub 地址
+    "url": "https://github.com/你的用户名/element-plus-lego" // 👈 改成你的 GitHub 地址
   }
 }
 ```
@@ -44,9 +44,9 @@ npm login
 # 直接发布（会自动构建）
 npm publish
 
-# ⚠️ 如果包名 element-plus-pro 已被占用，需要改名或使用 scope：
+# ⚠️ 如果包名 element-plus-lego 已被占用，需要改名或使用 scope：
 # 方案 1: 修改 package.json 中的 name 为其他名称
-# 方案 2: 使用 scope 包名：@your-username/element-plus-pro
+# 方案 2: 使用 scope 包名：@your-username/element-plus-lego
 npm publish --access public
 ```
 
@@ -174,8 +174,8 @@ npm publish
 3. ✅ 在 README 中添加 npm 徽章展示安装量
 
 ```markdown
-![npm](https://img.shields.io/npm/v/element-plus-pro)
-![npm](https://img.shields.io/npm/dm/element-plus-pro)
+![npm](https://img.shields.io/npm/v/element-plus-lego)
+![npm](https://img.shields.io/npm/dm/element-plus-lego)
 ```
 
 ## 💪 下一步

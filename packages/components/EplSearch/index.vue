@@ -2,8 +2,8 @@
 import { getCurrentInstance, computed, type PropType } from 'vue';
 import { Search, Refresh, RefreshLeft } from '@element-plus/icons-vue';
 import type { FormRules } from 'element-plus';
-import { isFunction } from '@element-plus-pro/utils';
-import { useDynamicComponent } from '@element-plus-pro/hooks';
+import { isFunction } from '@element-plus-lego/utils';
+import { useDynamicComponent } from '@element-plus-lego/hooks';
 import type { TFormItem } from '../EplForm';
 import type { TProps, TEmits, TEmitsAttrs } from '.';
 

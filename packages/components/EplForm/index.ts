@@ -1,7 +1,7 @@
 import { h, reactive, ref, type Component } from 'vue';
 import type { ComputedRef } from 'vue';
 import type { FormRules, FormItemProps } from 'element-plus';
-import type { Compulsory, TCompType } from '@element-plus-pro/utils';
+import type { Compulsory, TCompType } from '@element-plus-lego/utils';
 import EplForm from './index.vue';
 
 export type TFormItem = Compulsory<Partial<FormItemProps>, 'label'> & {

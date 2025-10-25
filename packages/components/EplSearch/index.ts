@@ -1,6 +1,6 @@
 import { type ComponentInstance } from 'vue';
 import { ElButton, ElCard } from 'element-plus';
-import type { TCompType } from '@element-plus-pro/utils';
+import type { TCompType } from '@element-plus-lego/utils';
 
 export type TProps = ComponentInstance<typeof ElCard>;
 

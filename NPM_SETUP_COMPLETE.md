@@ -54,11 +54,11 @@
 ## 📦 包结构说明
 
 ```
-element-plus-pro/
+element-plus-lego/
 ├── dist/                          # 构建输出目录（发布到 npm）
-│   ├── element-plus-pro.es.js     # ES Module 格式
-│   ├── element-plus-pro.cjs.js    # CommonJS 格式
-│   ├── element-plus-pro.umd.js    # UMD 格式
+│   ├── element-plus-lego.es.js     # ES Module 格式
+│   ├── element-plus-lego.cjs.js    # CommonJS 格式
+│   ├── element-plus-lego.umd.js    # UMD 格式
 │   ├── index.d.ts                 # TypeScript 类型声明
 │   └── style.css                  # 样式文件（如果有）
 ├── packages/                      # 源代码
@@ -83,12 +83,12 @@ element-plus-pro/
 
 ```json
 {
-  "name": "element-plus-pro", // 如果包名被占用，改为 @your-username/element-plus-pro
+  "name": "element-plus-lego", // 如果包名被占用，改为 @your-username/element-plus-lego
   "version": "1.0.0",
   "author": "你的名字",
   "repository": {
     "type": "git",
-    "url": "https://github.com/你的用户名/element-plus-pro"
+    "url": "https://github.com/你的用户名/element-plus-lego"
   }
 }
 ```
@@ -115,7 +115,7 @@ npm link
 
 # 在测试项目中
 cd /path/to/test-project
-npm link element-plus-pro
+npm link element-plus-lego
 
 # 测试引入
 import { EplTable } from 'element-plus-lego'
@@ -133,7 +133,7 @@ npm pack --dry-run
 # 发布
 npm publish
 
-# 如果使用 scope 包名（@your-username/element-plus-pro）
+# 如果使用 scope 包名（@your-username/element-plus-lego）
 npm publish --access public
 ```
 
@@ -141,10 +141,10 @@ npm publish --access public
 
 ```bash
 # 查看包信息
-npm view element-plus-pro
+npm view element-plus-lego
 
 # 在新项目中安装测试
-pnpm install element-plus-pro
+pnpm install element-plus-lego
 ```
 
 ## 📝 使用方式
@@ -216,7 +216,7 @@ npm publish
 1. **包名唯一性**：发布前确保包名在 npm 上可用
 
    ```bash
-   npm view element-plus-pro
+   npm view element-plus-lego
    ```
 
    如果包名已被占用，需要改名或使用 scope 包名

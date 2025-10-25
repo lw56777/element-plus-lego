@@ -1,5 +1,5 @@
 import type { TableColumnCtx } from 'element-plus';
-import type { Compulsory, TCompType } from '@element-plus-pro/utils';
+import type { Compulsory, TCompType } from '@element-plus-lego/utils';
 
 export type TTableColumn = Compulsory<Partial<TableColumnCtx>, 'label'> & {
   hidden?: boolean;

@@ -1,5 +1,5 @@
 {
-  "name": "@element-plus-pro/play",
+  "name": "@element-plus-lego/play",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,9 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@element-plus-pro/components": "workspace:*",
-    "@element-plus-pro/hooks": "workspace:*",
-    "@element-plus-pro/utils": "workspace:*"
+    "@element-plus-lego/components": "workspace:*",
+    "@element-plus-lego/hooks": "workspace:*",
+    "@element-plus-lego/utils": "workspace:*"
   },
   "devDependencies": {
     "@vueuse/core": "^13.9.0"

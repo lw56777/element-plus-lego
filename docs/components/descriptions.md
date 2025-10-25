@@ -108,7 +108,7 @@ const demo3Items = computed(() => [
 ```vue
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { EplDescriptions, type TDescriptionsItem } from '@element-plus-pro/components';
+import { EplDescriptions, type TDescriptionsItem } from '@element-plus-lego/components';
 
 const descriptionsData = ref({
   name: '远方os',
@@ -140,7 +140,7 @@ const items = computed(() => [
 <script setup lang="ts">
 import { h, ref, computed } from 'vue';
 import { ElTag, ElCheckboxGroup } from 'element-plus';
-import { EplDescriptions, type TDescriptionsItem } from '@element-plus-pro/components';
+import { EplDescriptions, type TDescriptionsItem } from '@element-plus-lego/components';
 
 const descriptionsData = ref({
   genderType: 1,
@@ -238,7 +238,7 @@ const items = computed(() => [
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { ElTag } from 'element-plus';
-import { EplDescriptions, type TDescriptionsItem } from '@element-plus-pro/components';
+import { EplDescriptions, type TDescriptionsItem } from '@element-plus-lego/components';
 
 const descriptionsData = ref({
   course: 'Vue源码课',

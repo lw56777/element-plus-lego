@@ -5,7 +5,7 @@ import {
   EplForm,
   useEplForm,
   type TFormItem,
-} from '@element-plus-pro/components';
+} from '@element-plus-lego/components';
 
 const formData = ref({
   name: '',

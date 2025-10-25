@@ -36,7 +36,7 @@ export default defineConfig({
     socialLinks: [
       {
         icon: 'github',
-        link: 'https://github.com/lw56777/element-plus-pro',
+        link: 'https://github.com/lw56777/element-plus-lego',
       },
     ],
   },

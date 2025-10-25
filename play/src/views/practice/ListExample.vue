@@ -4,7 +4,7 @@ import {
   EplSearch,
   EplTable,
   type TEmitsAttrs,
-} from '@element-plus-pro/components';
+} from '@element-plus-lego/components';
 import { useTable } from '~/hooks/useTable';
 
 const {

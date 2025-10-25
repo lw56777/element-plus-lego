@@ -2,7 +2,7 @@
 import { useTemplateRef, computed } from 'vue';
 import type { PropType } from 'vue';
 import type { FormInstance, FormRules } from 'element-plus';
-import { useDynamicComponent } from '@element-plus-pro/hooks';
+import { useDynamicComponent } from '@element-plus-lego/hooks';
 import type { TFormItem } from '.';
 
 const props = defineProps({

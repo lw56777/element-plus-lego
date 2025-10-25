@@ -8,15 +8,21 @@ importers:
 
   .:
     dependencies:
+      '@element-plus/icons-vue':
+        specifier: ^2.3.2
+        version: 2.3.2(vue@3.5.22(typescript@5.8.3))
       element-plus:
-        specifier: ^2.0.0
+        specifier: ^2.11.2
         version: 2.11.5(vue@3.5.22(typescript@5.8.3))
       lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
       vue:
-        specifier: ^3.0.0
+        specifier: ^3.5.18
         version: 3.5.22(typescript@5.8.3)
+      vue-router:
+        specifier: ^4.5.1
+        version: 4.6.3(vue@3.5.22(typescript@5.8.3))
     devDependencies:
       '@types/lodash-es':
         specifier: ^4.17.12
@@ -60,7 +66,7 @@ importers:
 
   docs:
     dependencies:
-      '@element-plus-pro/components':
+      '@element-plus-lego/components':
         specifier: workspace:*
         version: link:../packages/components
       '@element-plus/icons-vue':
@@ -79,16 +85,16 @@ importers:
 
   packages/components:
     dependencies:
-      '@element-plus-pro/hooks':
+      '@element-plus-lego/hooks':
         specifier: workspace:*
         version: link:../hooks
-      '@element-plus-pro/utils':
+      '@element-plus-lego/utils':
         specifier: workspace:*
         version: link:../utils
 
   packages/hooks:
     dependencies:
-      '@element-plus-pro/utils':
+      '@element-plus-lego/utils':
         specifier: workspace:*
         version: link:../utils
 
@@ -96,13 +102,13 @@ importers:
 
   play:
     dependencies:
-      '@element-plus-pro/components':
+      '@element-plus-lego/components':
         specifier: workspace:*
         version: link:../packages/components
-      '@element-plus-pro/hooks':
+      '@element-plus-lego/hooks':
         specifier: workspace:*
         version: link:../packages/hooks
-      '@element-plus-pro/utils':
+      '@element-plus-lego/utils':
         specifier: workspace:*
         version: link:../packages/utils
     devDependencies:
@@ -998,6 +1004,9 @@ packages:
   '@vue/compiler-ssr@3.5.22':
     resolution: {integrity: sha512-GdgyLvg4R+7T8Nk2Mlighx7XGxq/fJf9jaVofc3IL0EPesTE86cP/8DD1lT3h1JeZr2ySBvyqKQJgbS54IX1Ww==}
 
+  '@vue/devtools-api@6.6.4':
+    resolution: {integrity: sha512-sGhTPMuXqZ1rVOk32RylztWkfXTRhuS7vgAKv0zjqk8gbsHkJ7xfFf+jbySxt7tWObEJwyKaHMikV/WGDiQm8g==}
+
   '@vue/devtools-api@7.7.7':
     resolution: {integrity: sha512-lwOnNBH2e7x1fIIbVT7yF5D+YWhqELm55/4ZKf45R9T8r9dE2AIOy8HKjfqzGsoTHFbWbr337O4E0A0QADnjBg==}
 
@@ -1795,6 +1804,11 @@ packages:
 
   vue-flow-layout@0.2.0:
     resolution: {integrity: sha512-zKgsWWkXq0xrus7H4Mc+uFs1ESrmdTXlO0YNbR6wMdPaFvosL3fMB8N7uTV308UhGy9UvTrGhIY7mVz9eN+L0Q==}
+
+  vue-router@4.6.3:
+    resolution: {integrity: sha512-ARBedLm9YlbvQomnmq91Os7ck6efydTSpRP3nuOKCvgJOHNrhRoJDSKtee8kcL1Vf7nz6U+PMBL+hTvR3bTVQg==}
+    peerDependencies:
+      vue: ^3.5.0
 
   vue-tsc@3.1.2:
     resolution: {integrity: sha512-3fd4DY0rFczs5f+VB3OhcLU83V6+3Puj2yLBe0Ak65k7ERk+STVNKaOAi0EBo6Lc15UiJB6LzU6Mxy4+h/pKew==}
@@ -2669,6 +2683,8 @@ snapshots:
     dependencies:
       '@vue/compiler-dom': 3.5.22
       '@vue/shared': 3.5.22
+
+  '@vue/devtools-api@6.6.4': {}
 
   '@vue/devtools-api@7.7.7':
     dependencies:
@@ -3563,6 +3579,11 @@ snapshots:
       vue: 3.5.22(typescript@5.8.3)
 
   vue-flow-layout@0.2.0: {}
+
+  vue-router@4.6.3(vue@3.5.22(typescript@5.8.3)):
+    dependencies:
+      '@vue/devtools-api': 6.6.4
+      vue: 3.5.22(typescript@5.8.3)
 
   vue-tsc@3.1.2(typescript@5.8.3):
     dependencies:

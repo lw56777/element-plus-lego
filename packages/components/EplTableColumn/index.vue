@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, type PropType } from 'vue';
 import { ElTableColumn as ElColumn } from 'element-plus';
-import { useDynamicComponent } from '@element-plus-pro/hooks';
+import { useDynamicComponent } from '@element-plus-lego/hooks';
 import BaTableColumn from './index.vue';
 import type { TTableColumn } from '.';
 

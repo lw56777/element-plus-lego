@@ -1,7 +1,7 @@
 import { computed } from 'vue';
 import { ElMessage } from 'element-plus';
-import { usePagination } from '@element-plus-pro/hooks';
-import { useEplDialog } from '@element-plus-pro/components';
+import { usePagination } from '@element-plus-lego/hooks';
+import { useEplDialog } from '@element-plus-lego/components';
 import { getTableData } from '~/request';
 import DialogContent from '~/components/DialogContent.vue';
 

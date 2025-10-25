@@ -1,5 +1,5 @@
 {
-  "name": "@element-plus-pro/hooks",
+  "name": "@element-plus-lego/hooks",
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
@@ -10,6 +10,6 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@element-plus-pro/utils": "workspace:*"
+    "@element-plus-lego/utils": "workspace:*"
   }
 }

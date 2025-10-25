@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { EplButton } from '@element-plus-pro/components';
+import { EplButton } from '@element-plus-lego/components';
 
 const onClick = async () => {
   return new Promise(resolve => setTimeout(resolve, 1000));

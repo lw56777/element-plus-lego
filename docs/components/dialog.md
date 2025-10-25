@@ -9,7 +9,7 @@
 <script setup>
 import { h } from 'vue';
 import { ElMessage } from 'element-plus';
-import { useEplDialog } from '@element-plus-pro/components';
+import { useEplDialog } from '@element-plus-lego/components';
 
 const DialogContent = {
   setup() {
@@ -55,7 +55,7 @@ const handleDialog = () => {
 
 ```vue
 <script setup lang="ts">
-import { useEplDialog } from '@element-plus-pro/components';
+import { useEplDialog } from '@element-plus-lego/components';
 import DialogContent from './DialogContent.vue';
 
 const handleDialog = () => {

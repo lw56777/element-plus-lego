@@ -1,5 +1,5 @@
 {
-  "name": "@element-plus-pro/docs",
+  "name": "@element-plus-lego/docs",
   "version": "1.0.0",
   "description": "Element Plus Lego 组件库文档",
   "scripts": {
@@ -13,7 +13,7 @@
     "vue": "^3.5.22"
   },
   "dependencies": {
-    "@element-plus-pro/components": "workspace:*",
+    "@element-plus-lego/components": "workspace:*",
     "@element-plus/icons-vue": "^2.3.2"
   }
 }

@@ -9,7 +9,7 @@
     "lib": ["ESNext", "DOM"],
     "baseUrl": "./",
     "paths": {
-      "@element-plus-pro/*": ["packages/*"]
+      "@element-plus-lego/*": ["packages/*"]
     },
     "declaration": true,
     "declarationDir": "dist",

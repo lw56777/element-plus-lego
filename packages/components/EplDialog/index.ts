@@ -2,7 +2,7 @@ import { createApp, h, ref } from 'vue';
 import type { VNode, Component } from 'vue';
 import { ElDialog, ElButton } from 'element-plus';
 import type { DialogProps, ButtonProps } from 'element-plus';
-import { isString } from '@element-plus-pro/utils';
+import { isString } from '@element-plus-lego/utils';
 
 export type TDialogProps = Partial<DialogProps> & {
   footer?: (() => VNode) | (() => VNode[]) | Component;

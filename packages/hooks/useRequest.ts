@@ -1,6 +1,6 @@
 import { isRef, ref } from 'vue';
 import { debounce } from 'lodash-es';
-import { isArray } from '@element-plus-pro/utils';
+import { isArray } from '@element-plus-lego/utils';
 
 export type TService = (...args: any[]) => Promise<any> | Promise<any>[];
 

@@ -1,7 +1,7 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { ElMessage, type FormRules } from 'element-plus';
-import { useEplForm, type TFormItem } from '@element-plus-pro/components';
+import { useEplForm, type TFormItem } from '@element-plus-lego/components';
 
 interface ISignInForm {
   username: string;

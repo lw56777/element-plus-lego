@@ -632,4 +632,4 @@ const handleDelete = async (row: any) => {
 
 ## 📚 更多示例
 
-查看 [在线文档](https://element-plus-pro.vercel.app/) 获取更多详细示例和 API 文档。
+查看 [在线文档](https://element-plus-lego.vercel.app/) 获取更多详细示例和 API 文档。

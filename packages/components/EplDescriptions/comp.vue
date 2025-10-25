@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useDynamicComponent } from '@element-plus-pro/hooks';
-import type { TCompType } from '@element-plus-pro/utils';
+import { useDynamicComponent } from '@element-plus-lego/hooks';
+import type { TCompType } from '@element-plus-lego/utils';
 import type { PropType } from 'vue';
 
 const props = defineProps({

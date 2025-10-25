@@ -1,5 +1,5 @@
 import type { DescriptionItemProps } from 'element-plus';
-import type { TCompType } from '@element-plus-pro/utils';
+import type { TCompType } from '@element-plus-lego/utils';
 
 type TProps =
   | string

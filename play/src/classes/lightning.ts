@@ -1,4 +1,4 @@
-import { getRandomInt } from '@element-plus-pro/utils';
+import { getRandomInt } from '@element-plus-lego/utils';
 import type { ILightningRoot } from '../interfaces/lightning';
 
 const INITIAL_ALPHA = 0.35;

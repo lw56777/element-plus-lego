@@ -5,7 +5,7 @@
 <script setup>
 import { h, ref, computed } from 'vue';
 import { ElSwitch } from 'element-plus';
-import { useEplForm } from '@element-plus-pro/components';
+import { useEplForm } from '@element-plus-lego/components';
 
 // 基础用法 demo
 const demo1FormData = ref({
@@ -156,7 +156,7 @@ const { formComp: Demo4FormComp, validate: demo4Validate, resetFields: demo4Rese
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import type { FormRules } from 'element-plus';
-import { EplForm, type TFormItem } from '@element-plus-pro/components';
+import { EplForm, type TFormItem } from '@element-plus-lego/components';
 
 const formData = ref({
   name: '',
@@ -217,7 +217,7 @@ const formRef = ref();
 <script setup lang="ts">
 import { h, ref, computed } from 'vue';
 import { ElSwitch, type FormRules } from 'element-plus';
-import { EplForm, type TFormItem } from '@element-plus-pro/components';
+import { EplForm, type TFormItem } from '@element-plus-lego/components';
 
 const formData = ref({
   gender: 0,
@@ -297,7 +297,7 @@ const formRef = ref();
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import type { FormRules } from 'element-plus';
-import { EplForm, type TFormItem } from '@element-plus-pro/components';
+import { EplForm, type TFormItem } from '@element-plus-lego/components';
 
 const formData = ref({
   desc: '',
@@ -354,7 +354,7 @@ const formRef = ref();
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import type { FormRules } from 'element-plus';
-import { useEplForm, type TFormItem } from '@element-plus-pro/components';
+import { useEplForm, type TFormItem } from '@element-plus-lego/components';
 
 const formData = ref({
   username: '',

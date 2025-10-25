@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, nextTick, watch } from 'vue';
 import { useStorage } from '@vueuse/core';
-import { getLocalStorage } from '@element-plus-pro/utils';
+import { getLocalStorage } from '@element-plus-lego/utils';
 import CLightning from '../../classes/lightning';
 
 const bgEffectValue = useStorage(
