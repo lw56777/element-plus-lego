@@ -151,40 +151,26 @@ pnpm install element-plus-lego
 
 用户安装后可以通过以下方式使用：
 
-### 完整引入
+### 引入
 
 ```typescript
-import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css';
 import 'element-plus/theme-chalk/dark/css-vars.css';
+import {
+  ElButton,
+  ElInput,
+  // ...
+} from 'element-plus';
 import ElementPlusLego from 'element-plus-lego';
 
-app.use(ElementPlus);
-app.use(ElementPlusLego);
-```
+// 动态组件映射
+const componentMap = {
+  button: ElButton,
+  input: ElInput,
+  // ...
+};
 
-### 按需引入组件
-
-```typescript
-import { EplTable, EplForm, EplSearch } from 'element-plus-lego';
-```
-
-### 按需引入 Hooks
-
-```typescript
-import { usePagination, useRequest } from 'element-plus-lego';
-```
-
-### 按需引入工具函数
-
-```typescript
-import { isObject, deepClone } from 'element-plus-lego';
-```
-
-### 按需引入类型
-
-```typescript
-import type { Optional, Compulsory } from 'element-plus-lego';
+app.use(ElementPlusLego, componentMap);
 ```
 
 ## 🔄 版本更新流程

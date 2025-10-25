@@ -6,7 +6,32 @@ import './styles/common.css';
 import 'element-plus/dist/index.css';
 import 'element-plus/theme-chalk/dark/css-vars.css';
 
+import {
+  ElButton,
+  ElInput,
+  ElCascader,
+  ElCheckbox,
+  ElDatePicker,
+  ElRadio,
+  ElSelect,
+  ElSwitch,
+} from 'element-plus';
+import ElementPlusLego from '../../index';
+
 const app = createApp(App);
+
+const componentMap = {
+  button: ElButton,
+  input: ElInput,
+  cascader: ElCascader,
+  checkbox: ElCheckbox,
+  date: ElDatePicker,
+  radio: ElRadio,
+  select: ElSelect,
+  switch: ElSwitch,
+};
+
+app.use(ElementPlusLego, componentMap);
 
 app.use(router);
 router.isReady().then(() => {

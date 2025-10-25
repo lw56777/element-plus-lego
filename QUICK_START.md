@@ -69,33 +69,27 @@ yarn add element-plus-lego
 ```typescript
 // main.ts
 import { createApp } from 'vue';
-import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css';
 import 'element-plus/theme-chalk/dark/css-vars.css';
+import {
+  ElButton,
+  ElInput,
+  // ...
+} from 'element-plus';
 import ElementPlusLego from 'element-plus-lego';
 import App from './App.vue';
 
+// 动态组件映射
+const componentMap = {
+  button: ElButton,
+  input: ElInput,
+  // ...
+};
+
 const app = createApp(App);
 
-app.use(ElementPlus);
-app.use(ElementPlusLego);
+app.use(ElementPlusLego, componentMap);
 app.mount('#app');
-```
-
-### 按需引入
-
-```typescript
-// 组件
-import { EplTable, EplForm, EplSearch } from 'element-plus-lego';
-
-// Hooks
-import { usePagination, useRequest } from 'element-plus-lego';
-
-// 工具函数
-import { isObject, getTextWidth } from 'element-plus-lego';
-
-// 类型
-import type { Optional, Compulsory } from 'element-plus-lego';
 ```
 
 ## 📦 包含内容

@@ -15,33 +15,31 @@ npm install element-plus-lego
 yarn add element-plus-lego
 ```
 
-## 完整引入
+## 导入
 
 ```ts
 import { createApp } from 'vue';
-import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css';
 import 'element-plus/theme-chalk/dark/css-vars.css';
+import {
+  ElButton,
+  ElInput,
+  // ...
+} from 'element-plus';
 import ElementPlusLego from 'element-plus-lego';
 import App from './App.vue';
 
+// 动态组件映射
+const componentMap = {
+  button: ElButton,
+  input: ElInput,
+  // ...
+};
+
 const app = createApp(App);
 
-app.use(ElementPlus);
-app.use(ElementPlusLego);
+app.use(ElementPlusLego, componentMap);
 app.mount('#app');
-```
-
-## 按需引入
-
-```vue
-<script setup lang="ts">
-import { EplButton } from 'element-plus-lego';
-</script>
-
-<template>
-  <EplButton>点击</EplButton>
-</template>
 ```
 
 ## 开始使用
