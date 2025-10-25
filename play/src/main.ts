@@ -7,7 +7,6 @@ import 'element-plus/dist/index.css';
 import 'element-plus/theme-chalk/dark/css-vars.css';
 
 import {
-  ElButton,
   ElInput,
   ElCascader,
   ElCheckbox,
@@ -21,7 +20,6 @@ import ElementPlusLego from '../../index';
 const app = createApp(App);
 
 const componentMap = {
-  button: ElButton,
   input: ElInput,
   cascader: ElCascader,
   checkbox: ElCheckbox,

@@ -64,24 +64,19 @@ npm install element-plus-lego
 yarn add element-plus-lego
 ```
 
-### 完整引入
+### 引入
 
 ```typescript
 // main.ts
 import { createApp } from 'vue';
 import 'element-plus/dist/index.css';
 import 'element-plus/theme-chalk/dark/css-vars.css';
-import {
-  ElButton,
-  ElInput,
-  // ...
-} from 'element-plus';
+import { ElInput } from 'element-plus';
 import ElementPlusLego from 'element-plus-lego';
 import App from './App.vue';
 
 // 动态组件映射
 const componentMap = {
-  button: ElButton,
   input: ElInput,
   // ...
 };

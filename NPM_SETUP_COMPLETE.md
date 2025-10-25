@@ -156,16 +156,11 @@ pnpm install element-plus-lego
 ```typescript
 import 'element-plus/dist/index.css';
 import 'element-plus/theme-chalk/dark/css-vars.css';
-import {
-  ElButton,
-  ElInput,
-  // ...
-} from 'element-plus';
+import { ElInput } from 'element-plus';
 import ElementPlusLego from 'element-plus-lego';
 
 // 动态组件映射
 const componentMap = {
-  button: ElButton,
   input: ElInput,
   // ...
 };
