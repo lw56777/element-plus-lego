@@ -20,4 +20,4 @@ export type TEmits = {
   refresh: () => void;
 };
 
-export { default as ElpSearch } from './index.vue';
+export { default as EplSearch } from './index.vue';

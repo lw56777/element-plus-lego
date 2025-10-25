@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress';
 
 export default defineConfig({
-  title: 'Element Plus Pro',
+  title: 'Element Plus Lego',
   description: '基于 Element Plus 的高级组件库',
   lang: 'zh-CN',
   themeConfig: {

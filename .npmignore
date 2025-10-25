@@ -1,0 +1,39 @@
+# 源代码目录（packages 保留以支持 TypeScript 类型引用）
+# packages/
+
+# 开发和测试目录
+play/
+docs/
+images/
+node_modules/
+
+# 配置文件
+.vscode/
+.idea/
+*.log
+*.lock
+pnpm-lock.yaml
+pnpm-workspace.yaml
+.DS_Store
+
+# TypeScript 配置
+tsconfig.json
+
+# Vite 配置
+vite.config.ts
+uno.config.ts
+
+# Git 文件
+.git/
+.gitignore
+.github/
+
+# 文档
+*.md
+!README.md
+
+# 其他
+.editorconfig
+.eslintrc*
+.prettierrc*
+

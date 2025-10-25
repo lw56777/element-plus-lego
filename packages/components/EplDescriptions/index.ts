@@ -16,4 +16,4 @@ export type TDescriptionsItem = Omit<Partial<DescriptionItemProps>, 'label'> & {
   hidden?: boolean;
 };
 
-export { default as ElpDescriptions } from './index.vue';
+export { default as EplDescriptions } from './index.vue';

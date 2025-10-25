@@ -3,7 +3,7 @@ import { computed, type ComponentInstance, type PropType } from 'vue';
 import { ElTable } from 'element-plus';
 import { omit } from 'lodash-es';
 import type { TPageProps } from '@element-plus-pro/hooks';
-import { ElpTableColumn, type TTableColumn } from '../ElpTableColumn';
+import { EplTableColumn, type TTableColumn } from '../EplTableColumn';
 
 const props = defineProps({
   columns: {
@@ -32,11 +32,11 @@ defineExpose({} as ComponentInstance<typeof ElTable>);
 <template>
   <div class="elp-table">
     <el-table :data="tableData" v-bind="$attrs">
-      <ElpTableColumn :columns="columns">
+      <EplTableColumn :columns="columns">
         <template v-for="(_, name) in $slots" :key="name" #[name]="slotData">
           <slot :name="name" v-bind="slotData" />
         </template>
-      </ElpTableColumn>
+      </EplTableColumn>
     </el-table>
 
     <div class="flex justify-end mt-10">

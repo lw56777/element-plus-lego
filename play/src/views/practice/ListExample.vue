@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import {
-  ElpSearch,
-  ElpTable,
+  EplSearch,
+  EplTable,
   type TEmitsAttrs,
 } from '@element-plus-pro/components';
 import { useTable } from '~/hooks/useTable';
@@ -143,7 +143,7 @@ const columns = computed(() => [
 <template>
   <div>
     <el-card>
-      <ElpSearch v-model="params" :items="items" :emits="emits"></ElpSearch>
+      <EplSearch v-model="params" :items="items" :emits="emits"></EplSearch>
     </el-card>
 
     <el-card class="mt-2">
@@ -151,7 +151,7 @@ const columns = computed(() => [
         <el-button type="primary" @click="onAdd">添加</el-button>
       </template>
 
-      <ElpTable
+      <EplTable
         v-loading="loading"
         v-model="data"
         :columns="columns"
@@ -171,7 +171,7 @@ const columns = computed(() => [
           <el-button type="primary" link @click="onEdit(row)">编辑</el-button>
           <el-button type="danger" link @click="onDelete(row)">删除</el-button>
         </template>
-      </ElpTable>
+      </EplTable>
     </el-card>
   </div>
 </template>

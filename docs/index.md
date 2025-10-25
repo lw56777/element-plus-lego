@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: Element Plus Pro
+  name: Element Plus Lego
   text: 高级组件库
   tagline: 基于 Element Plus 封装的企业级组件库
   actions:

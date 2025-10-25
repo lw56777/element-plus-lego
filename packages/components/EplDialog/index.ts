@@ -15,7 +15,7 @@ type TFooterBtnProps = Partial<ButtonProps> & {
   click?: string | ((...args: any[]) => void); // 事件名称/点击事件
 };
 
-export function useElpDialog(
+export function useEplDialog(
   componet: Component | (() => VNode) | string,
   props: Record<string, any>,
   DialogProps: TDialogProps,

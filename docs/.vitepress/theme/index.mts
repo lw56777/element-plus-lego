@@ -3,7 +3,7 @@ import ElementPlus from 'element-plus';
 import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 import 'element-plus/dist/index.css';
 import 'element-plus/theme-chalk/dark/css-vars.css';
-import * as ElementPlusPro from '@element-plus-pro/components';
+import * as ElementPlusLego from '@element-plus-pro/components';
 import Demo from './components/demo.vue';
 
 export default {
@@ -16,10 +16,10 @@ export default {
       app.component(key, component);
     }
 
-    // 注册 Element Plus Pro 组件
-    Object.keys(ElementPlusPro).forEach(key => {
+    // 注册 Element Plus Lego 组件
+    Object.keys(ElementPlusLego).forEach(key => {
       if (key.startsWith('Elp')) {
-        app.component(key, ElementPlusPro[key]);
+        app.component(key, ElementPlusLego[key]);
       }
     });
 

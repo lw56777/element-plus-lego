@@ -10,6 +10,15 @@
     "baseUrl": "./",
     "paths": {
       "@element-plus-pro/*": ["packages/*"]
-    }
-  }
+    },
+    "declaration": true,
+    "declarationDir": "dist",
+    "emitDeclarationOnly": false,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "jsx": "preserve"
+  },
+  "include": ["index.ts", "packages/**/*"],
+  "exclude": ["node_modules", "dist", "play", "docs"]
 }

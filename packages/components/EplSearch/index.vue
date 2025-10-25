@@ -4,7 +4,7 @@ import { Search, Refresh, RefreshLeft } from '@element-plus/icons-vue';
 import type { FormRules } from 'element-plus';
 import { isFunction } from '@element-plus-pro/utils';
 import { useDynamicComponent } from '@element-plus-pro/hooks';
-import type { TFormItem } from '../ElpForm';
+import type { TFormItem } from '../EplForm';
 import type { TProps, TEmits, TEmitsAttrs } from '.';
 
 const props = defineProps({

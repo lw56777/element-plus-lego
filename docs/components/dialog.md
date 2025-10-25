@@ -4,12 +4,12 @@
 
 ## 基础用法
 
-使用 `useElpDialog` Hook 创建对话框。
+使用 `useEplDialog` Hook 创建对话框。
 
 <script setup>
 import { h } from 'vue';
 import { ElMessage } from 'element-plus';
-import { useElpDialog } from '@element-plus-pro/components';
+import { useEplDialog } from '@element-plus-pro/components';
 
 const DialogContent = {
   setup() {
@@ -18,7 +18,7 @@ const DialogContent = {
 };
 
 const handleDialog = () => {
-  const { instnce, createConfirm, createCancel } = useElpDialog(
+  const { instnce, createConfirm, createCancel } = useEplDialog(
     DialogContent,
     {
       value: '传给内容组件的属性'
@@ -55,11 +55,11 @@ const handleDialog = () => {
 
 ```vue
 <script setup lang="ts">
-import { useElpDialog } from '@element-plus-pro/components';
+import { useEplDialog } from '@element-plus-pro/components';
 import DialogContent from './DialogContent.vue';
 
 const handleDialog = () => {
-  const { instnce, createConfirm, createCancel } = useElpDialog(
+  const { instnce, createConfirm, createCancel } = useEplDialog(
     DialogContent,
     {
       value: '传给内容组件的属性'
@@ -99,7 +99,7 @@ const handleDialog = () => {
 
 ## API
 
-### useElpDialog
+### useEplDialog
 
 #### 参数
 

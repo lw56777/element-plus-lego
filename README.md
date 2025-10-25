@@ -2,15 +2,25 @@
   <img width="200px" src="images/logo.png" />
 </p>
 
+<p align="center">
+  <a href="https://www.npmjs.com/package/element-plus-lego">
+    <img src="https://img.shields.io/npm/v/element-plus-lego.svg" alt="npm version">
+  </a>
+  <a href="https://www.npmjs.com/package/element-plus-lego">
+    <img src="https://img.shields.io/npm/dm/element-plus-lego.svg" alt="npm downloads">
+  </a>
+  <a href="https://github.com/lw567/element-plus-pro/blob/main/LICENSE">
+    <img src="https://img.shields.io/npm/l/element-plus-lego.svg" alt="license">
+  </a>
+</p>
+
 ## 🚀 项目介绍
 
-Element Plus Pro 是一个基于 Vue3 + Element Plus 的开箱即用的二次封装组件库
+Element Plus Lego 是一个基于 Vue3 + Element Plus 的开箱即用的二次封装组件库
 
 ## 🌐 演示地址
 
-[查看文档](https://element-plus-pro.vercel.app/)
-
-[完整示例](https://bricklayer-admin.vercel.app)
+[查看文档](https://element-plus-lego.vercel.app/) ｜ [完整示例](https://bricklayer-admin.vercel.app)
 
 ## ✨ 特性
 
@@ -19,15 +29,6 @@ Element Plus Pro 是一个基于 Vue3 + Element Plus 的开箱即用的二次封
 - 📱 **响应式设计** - 支持多种设备屏幕适配
 - 🔧 **Hook 封装** - 提供常用业务逻辑 Hook
 - 📦 **示例完善** - 每个组件都有对应的使用示例
-
-## 🛠️ 技术栈
-
-- **框架：** Vue3 + TypeScript
-- **UI 组件库：** Element Plus + Element Plus Icons
-- **样式：** UnoCSS (原子化 CSS)
-- **路由：** Vue Router 4
-- **工具库：** VueUse + Lodash-es
-- **构建工具：** Vite
 
 <p align="center">
   <img width="200px" src="images/bricklaying.GIF" />

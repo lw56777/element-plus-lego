@@ -5,7 +5,7 @@
 <script setup>
 import { h, ref, computed } from 'vue';
 import { ElSwitch } from 'element-plus';
-import { useElpForm } from '@element-plus-pro/components';
+import { useEplForm } from '@element-plus-pro/components';
 
 // 基础用法 demo
 const demo1FormData = ref({
@@ -132,7 +132,7 @@ const demo4Rules = {
   ],
 };
 
-const { formComp: Demo4FormComp, validate: demo4Validate, resetFields: demo4ResetFields } = useElpForm({
+const { formComp: Demo4FormComp, validate: demo4Validate, resetFields: demo4ResetFields } = useEplForm({
   modelValue: demo4FormData,
   rules: demo4Rules,
   items: demo4FormItems,
@@ -144,7 +144,7 @@ const { formComp: Demo4FormComp, validate: demo4Validate, resetFields: demo4Rese
 通过配置快速生成表单。
 
 <Demo>
-  <ElpForm v-model="demo1FormData" :rules="demo1Rules" :items="demo1FormItems" ref="demo1FormRef"></ElpForm>
+  <EplForm v-model="demo1FormData" :rules="demo1Rules" :items="demo1FormItems" ref="demo1FormRef"></EplForm>
   <div style="margin-top: 20px;">
     <el-button type="primary" @click="demo1FormRef?.validate">校验</el-button>
     <el-button @click="demo1FormRef?.resetFields">重置</el-button>
@@ -156,7 +156,7 @@ const { formComp: Demo4FormComp, validate: demo4Validate, resetFields: demo4Rese
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import type { FormRules } from 'element-plus';
-import { ElpForm, type TFormItem } from '@element-plus-pro/components';
+import { EplForm, type TFormItem } from '@element-plus-pro/components';
 
 const formData = ref({
   name: '',
@@ -186,12 +186,12 @@ const formRef = ref();
 <\/script>
 
 <template>
-  <ElpForm
+  <EplForm
     v-model="formData"
     :rules="rules"
     :items="formItems"
     ref="formRef"
-  ></ElpForm>
+  ></EplForm>
   <el-button type="primary" @click="formRef?.validate">校验</el-button>
   <el-button @click="formRef?.resetFields">重置</el-button>
 </template>
@@ -205,7 +205,7 @@ const formRef = ref();
 支持使用 `compType` 配置不同的表单组件类型，`compProps` 传递组件属性。
 
 <Demo>
-  <ElpForm v-model="demo2FormData" :rules="demo2Rules" :items="demo2FormItems" ref="demo2FormRef"></ElpForm>
+  <EplForm v-model="demo2FormData" :rules="demo2Rules" :items="demo2FormItems" ref="demo2FormRef"></EplForm>
   <div style="margin-top: 20px;">
     <el-button type="primary" @click="demo2FormRef?.validate">校验</el-button>
     <el-button @click="demo2FormRef?.resetFields">重置</el-button>
@@ -217,7 +217,7 @@ const formRef = ref();
 <script setup lang="ts">
 import { h, ref, computed } from 'vue';
 import { ElSwitch, type FormRules } from 'element-plus';
-import { ElpForm, type TFormItem } from '@element-plus-pro/components';
+import { EplForm, type TFormItem } from '@element-plus-pro/components';
 
 const formData = ref({
   gender: 0,
@@ -262,12 +262,12 @@ const formRef = ref();
 </script>
 
 <template>
-  <ElpForm
+  <EplForm
     v-model="formData"
     :rules="rules"
     :items="formItems"
     ref="formRef"
-  ></ElpForm>
+  ></EplForm>
   <el-button type="primary" @click="formRef?.validate">校验</el-button>
   <el-button @click="formRef?.resetFields">重置</el-button>
 </template>
@@ -281,11 +281,11 @@ const formRef = ref();
 通过 `prop` 对应插槽名称。
 
 <Demo>
-  <ElpForm v-model="demo3FormData" :rules="demo3Rules" :items="demo3FormItems" ref="demo3FormRef">
+  <EplForm v-model="demo3FormData" :rules="demo3Rules" :items="demo3FormItems" ref="demo3FormRef">
     <template #desc>
       <el-input v-model="demo3FormData.desc" type="textarea" />
     </template>
-  </ElpForm>
+  </EplForm>
   <div style="margin-top: 20px;">
     <el-button type="primary" @click="demo3FormRef?.validate">校验</el-button>
     <el-button @click="demo3FormRef?.resetFields">重置</el-button>
@@ -297,7 +297,7 @@ const formRef = ref();
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import type { FormRules } from 'element-plus';
-import { ElpForm, type TFormItem } from '@element-plus-pro/components';
+import { EplForm, type TFormItem } from '@element-plus-pro/components';
 
 const formData = ref({
   desc: '',
@@ -319,7 +319,7 @@ const formRef = ref();
 <\/script>
 
 <template>
-  <ElpForm
+  <EplForm
     v-model="formData"
     :rules="rules"
     :items="formItems"
@@ -328,7 +328,7 @@ const formRef = ref();
     <template #desc>
       <el-input v-model="formData.desc" type="textarea" />
     </template>
-  </ElpForm>
+  </EplForm>
   <el-button type="primary" @click="formRef?.validate">校验</el-button>
   <el-button @click="formRef?.resetFields">重置</el-button>
 </template>
@@ -339,7 +339,7 @@ const formRef = ref();
 
 ## 函数式用法
 
-使用 `useElpForm` 创建表单组件。
+使用 `useEplForm` 创建表单组件。
 
 <Demo>
   <Demo4FormComp />
@@ -354,7 +354,7 @@ const formRef = ref();
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import type { FormRules } from 'element-plus';
-import { useElpForm, type TFormItem } from '@element-plus-pro/components';
+import { useEplForm, type TFormItem } from '@element-plus-pro/components';
 
 const formData = ref({
   username: '',
@@ -384,7 +384,7 @@ const rules: FormRules = {
   ],
 };
 
-const { formComp: FormComp, validate, resetFields } = useElpForm({
+const { formComp: FormComp, validate, resetFields } = useEplForm({
   modelValue: formData,
   rules,
   items: formItems,
@@ -430,12 +430,12 @@ const { formComp: FormComp, validate, resetFields } = useElpForm({
 | validate    | 验证表单 | `() => Promise<boolean>` |
 | resetFields | 重置表单 | `() => void`             |
 
-## useElpForm
+## useEplForm
 
 函数式创建表单。
 
 ```ts
-const { formComp, validate, resetFields } = useElpForm({
+const { formComp, validate, resetFields } = useEplForm({
   modelValue,
   rules,
   items,

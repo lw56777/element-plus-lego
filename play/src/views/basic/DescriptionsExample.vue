@@ -2,7 +2,7 @@
 import { h, ref, computed, type ComputedRef } from 'vue';
 import { ElCheckboxGroup, ElTag } from 'element-plus';
 import {
-  ElpDescriptions,
+  EplDescriptions,
   type TDescriptionsItem,
 } from '@element-plus-pro/components';
 import HeaderComp from '~/components/HeaderComp.vue';
@@ -107,7 +107,7 @@ const items: ComputedRef<TDescriptionsItem[]> = computed(() => [
 
 <template>
   <div>
-    <ElpDescriptions v-model="descriptionsData" :items="items" border>
+    <EplDescriptions v-model="descriptionsData" :items="items" border>
       <template #course>
         <el-tag type="primary" size="large">
           {{ descriptionsData.course }}
@@ -119,6 +119,6 @@ const items: ComputedRef<TDescriptionsItem[]> = computed(() => [
           {{ descriptionsData.price }}
         </el-tag>
       </template>
-    </ElpDescriptions>
+    </EplDescriptions>
   </div>
 </template>

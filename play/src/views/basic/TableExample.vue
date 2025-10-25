@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { h, ref, computed, type ComputedRef } from 'vue';
 import { ElTag, ElSwitch } from 'element-plus';
-import { ElpTable, type TTableColumn } from '@element-plus-pro/components';
+import { EplTable, type TTableColumn } from '@element-plus-pro/components';
 import HeaderComp from '~/components/HeaderComp.vue';
 import AgeComp from '~/components/AgeComp.vue';
 
@@ -138,7 +138,7 @@ const columns: ComputedRef<TTableColumn[]> = computed(() => [
 </script>
 
 <template>
-  <ElpTable v-model="tableData" :columns="columns" border>
+  <EplTable v-model="tableData" :columns="columns" border>
     <template #name="{ row }">
       <el-tag type="success" size="large">{{ row.name }}</el-tag>
     </template>
@@ -148,5 +148,5 @@ const columns: ComputedRef<TTableColumn[]> = computed(() => [
     <template #actions="{ row }">
       <el-button @click="console.log(row)">查看</el-button>
     </template>
-  </ElpTable>
+  </EplTable>
 </template>

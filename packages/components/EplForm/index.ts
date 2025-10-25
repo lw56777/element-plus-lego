@@ -2,7 +2,7 @@ import { h, reactive, ref, type Component } from 'vue';
 import type { ComputedRef } from 'vue';
 import type { FormRules, FormItemProps } from 'element-plus';
 import type { Compulsory, TCompType } from '@element-plus-pro/utils';
-import ElpForm from './index.vue';
+import EplForm from './index.vue';
 
 export type TFormItem = Compulsory<Partial<FormItemProps>, 'label'> & {
   hidden?: boolean;
@@ -17,10 +17,10 @@ type FuncComponentProps = {
   items: TFormItem[] | ComputedRef<TFormItem[]>;
 };
 
-export const useElpForm = (props: FuncComponentProps) => {
+export const useEplForm = (props: FuncComponentProps) => {
   const formRef = ref();
   const Component: Component = (_: any, { slots }: any) => {
-    return h(ElpForm, { ...reactive(props), ref: formRef }, slots);
+    return h(EplForm, { ...reactive(props), ref: formRef }, slots);
   };
 
   return {
@@ -30,4 +30,4 @@ export const useElpForm = (props: FuncComponentProps) => {
   };
 };
 
-export { default as ElpForm } from './index.vue';
+export { default as EplForm } from './index.vue';

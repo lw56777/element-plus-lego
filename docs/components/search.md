@@ -56,7 +56,7 @@ const onRefresh = () => {
 </script>
 
 <Demo>
-  <ElpSearch
+  <EplSearch
     v-model="params"
     :items="items"
     @reset="onReset"
@@ -69,7 +69,7 @@ const onRefresh = () => {
 ```vue
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { ElpSearch } from '@element-plus-pro/components';
+import { EplSearch } from '@element-plus-pro/components';
 
 const params = ref({
   keywords: '',
@@ -103,7 +103,7 @@ const onSearch = () => {
 <\/script>
 
 <template>
-  <ElpSearch
+  <EplSearch
     v-model="params"
     :items="items"
     @search="onSearch"

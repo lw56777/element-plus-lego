@@ -1,6 +1,6 @@
-# Element Plus Pro
+# Element Plus Lego
 
-Element Plus Pro 是基于 Element Plus 二次封装的组件库，旨在轻松搬砖。
+Element Plus Lego 是基于 Element Plus 二次封装的组件库，旨在轻松搬砖。
 
 ## 特性
 

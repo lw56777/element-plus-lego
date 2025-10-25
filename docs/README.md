@@ -1,6 +1,6 @@
-# Element Plus Pro 文档
+# Element Plus Lego 文档
 
-本文档使用 VitePress 构建，展示 Element Plus Pro 组件库的所有组件示例和 API 文档。
+本文档使用 VitePress 构建，展示 Element Plus Lego 组件库的所有组件示例和 API 文档。
 
 ## 快速开始
 
@@ -78,4 +78,4 @@ docs/
 - [VitePress](https://vitepress.dev/) - 静态站点生成器
 - [Vue 3](https://vuejs.org/) - 渐进式 JavaScript 框架
 - [Element Plus](https://element-plus.org/) - Vue 3 组件库
-- **Element Plus Pro** - 基于 Element Plus 的高级组件库
+- **Element Plus Lego** - 基于 Element Plus 的高级组件库

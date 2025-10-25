@@ -2,8 +2,8 @@
 import { ref, computed, useTemplateRef, type ComputedRef } from 'vue';
 import type { FormRules } from 'element-plus';
 import {
-  ElpForm,
-  useElpForm,
+  EplForm,
+  useEplForm,
   type TFormItem,
 } from '@element-plus-pro/components';
 
@@ -125,10 +125,10 @@ const formItems: ComputedRef<TFormItem[]> = computed(() => [
 const formRef = useTemplateRef('formRef');
 
 const {
-  formComp: ElpFormComp,
+  formComp: EplFormComp,
   validate: validateBaForm,
   resetFields: resetFieldsBaForm,
-} = useElpForm({
+} = useEplForm({
   modelValue: formData,
   rules,
   items: formItems,
@@ -138,22 +138,22 @@ const {
 <template>
   <el-divider>模板式</el-divider>
 
-  <ElpForm v-model="formData" :rules="rules" :items="formItems" ref="formRef">
+  <EplForm v-model="formData" :rules="rules" :items="formItems" ref="formRef">
     <template #desc>
       <el-input v-model="formData.desc" type="textarea" />
     </template>
-  </ElpForm>
+  </EplForm>
 
   <el-button type="primary" @click="formRef?.validate">校验</el-button>
   <el-button @click="formRef?.resetFields">重置</el-button>
 
   <el-divider>函数式</el-divider>
 
-  <ElpFormComp>
+  <EplFormComp>
     <template #desc>
       <el-input v-model="formData.desc" type="textarea" />
     </template>
-  </ElpFormComp>
+  </EplFormComp>
 
   <el-button type="primary" @click="validateBaForm">校验</el-button>
   <el-button @click="resetFieldsBaForm">重置</el-button>

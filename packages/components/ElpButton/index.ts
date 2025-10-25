@@ -1,1 +1,0 @@
-export { default as ElpButton } from './index.vue';

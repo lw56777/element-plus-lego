@@ -4,7 +4,7 @@
 
 ## 基础用法
 
-ElpButton 在原生 Button 基础上增加了异步加载功能，点击按钮时会自动显示加载状态。
+EplButton 在原生 Button 基础上增加了异步加载功能，点击按钮时会自动显示加载状态。
 
 <script setup>
 const onClick = async () => {
@@ -13,12 +13,12 @@ const onClick = async () => {
 </script>
 
 <Demo>
-  <ElpButton @click="onClick">Default</ElpButton>
-  <ElpButton type="primary" @click="onClick">Primary</ElpButton>
-  <ElpButton type="success" @click="onClick">Success</ElpButton>
-  <ElpButton type="info" @click="onClick">Info</ElpButton>
-  <ElpButton type="warning" @click="onClick">Warning</ElpButton>
-  <ElpButton type="danger" @click="onClick">Danger</ElpButton>
+  <EplButton @click="onClick">Default</EplButton>
+  <EplButton type="primary" @click="onClick">Primary</EplButton>
+  <EplButton type="success" @click="onClick">Success</EplButton>
+  <EplButton type="info" @click="onClick">Info</EplButton>
+  <EplButton type="warning" @click="onClick">Warning</EplButton>
+  <EplButton type="danger" @click="onClick">Danger</EplButton>
   
   <template #code>
 
@@ -30,12 +30,12 @@ const onClick = async () => {
 <\/script>
 
 <template>
-  <ElpButton @click="onClick">Default</ElpButton>
-  <ElpButton type="primary" @click="onClick">Primary</ElpButton>
-  <ElpButton type="success" @click="onClick">Success</ElpButton>
-  <ElpButton type="info" @click="onClick">Info</ElpButton>
-  <ElpButton type="warning" @click="onClick">Warning</ElpButton>
-  <ElpButton type="danger" @click="onClick">Danger</ElpButton>
+  <EplButton @click="onClick">Default</EplButton>
+  <EplButton type="primary" @click="onClick">Primary</EplButton>
+  <EplButton type="success" @click="onClick">Success</EplButton>
+  <EplButton type="info" @click="onClick">Info</EplButton>
+  <EplButton type="warning" @click="onClick">Warning</EplButton>
+  <EplButton type="danger" @click="onClick">Danger</EplButton>
 </template>
 ```
 

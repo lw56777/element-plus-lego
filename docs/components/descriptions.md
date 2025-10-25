@@ -101,14 +101,14 @@ const demo3Items = computed(() => [
 通过配置快速生成描述列表。
 
 <Demo>
-  <ElpDescriptions v-model="demo1DescriptionsData" :items="demo1Items" border></ElpDescriptions>
+  <EplDescriptions v-model="demo1DescriptionsData" :items="demo1Items" border></EplDescriptions>
   
   <template #code>
 
 ```vue
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { ElpDescriptions, type TDescriptionsItem } from '@element-plus-pro/components';
+import { EplDescriptions, type TDescriptionsItem } from '@element-plus-pro/components';
 
 const descriptionsData = ref({
   name: '远方os',
@@ -120,7 +120,7 @@ const items = computed(() => [
 <\/script>
 
 <template>
-  <ElpDescriptions v-model="descriptionsData" :items="items" border></ElpDescriptions>
+  <EplDescriptions v-model="descriptionsData" :items="items" border></EplDescriptions>
 </template>
 ```
 
@@ -132,7 +132,7 @@ const items = computed(() => [
 支持使用函数组件和动态组件，以及动态显示/隐藏。
 
 <Demo>
-  <ElpDescriptions v-model="demo2DescriptionsData" :items="demo2Items" border></ElpDescriptions>
+  <EplDescriptions v-model="demo2DescriptionsData" :items="demo2Items" border></EplDescriptions>
   
   <template #code>
 
@@ -140,7 +140,7 @@ const items = computed(() => [
 <script setup lang="ts">
 import { h, ref, computed } from 'vue';
 import { ElTag, ElCheckboxGroup } from 'element-plus';
-import { ElpDescriptions, type TDescriptionsItem } from '@element-plus-pro/components';
+import { EplDescriptions, type TDescriptionsItem } from '@element-plus-pro/components';
 
 const descriptionsData = ref({
   genderType: 1,
@@ -207,7 +207,7 @@ const items = computed(() => [
 <\/script>
 
 <template>
-  <ElpDescriptions v-model="descriptionsData" :items="items" border></ElpDescriptions>
+  <EplDescriptions v-model="descriptionsData" :items="items" border></EplDescriptions>
 </template>
 ```
 
@@ -219,7 +219,7 @@ const items = computed(() => [
 通过 `label` `value` 对应插槽名称。
 
 <Demo>
-  <ElpDescriptions v-model="demo3DescriptionsData" :items="demo3Items" border>
+  <EplDescriptions v-model="demo3DescriptionsData" :items="demo3Items" border>
     <template #course>
       <el-tag type="primary" size="large">
         {{ demo3DescriptionsData.course }}
@@ -230,7 +230,7 @@ const items = computed(() => [
         {{ demo3DescriptionsData.price }}
       </el-tag>
     </template>
-  </ElpDescriptions>
+  </EplDescriptions>
   
   <template #code>
 
@@ -238,7 +238,7 @@ const items = computed(() => [
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { ElTag } from 'element-plus';
-import { ElpDescriptions, type TDescriptionsItem } from '@element-plus-pro/components';
+import { EplDescriptions, type TDescriptionsItem } from '@element-plus-pro/components';
 
 const descriptionsData = ref({
   course: 'Vue源码课',
@@ -254,7 +254,7 @@ const items = computed(() => [
 <\/script>
 
 <template>
-  <ElpDescriptions v-model="descriptionsData" :items="items" border>
+  <EplDescriptions v-model="descriptionsData" :items="items" border>
     <template #course>
       <el-tag type="primary" size="large">
         {{ descriptionsData.course }}
@@ -265,7 +265,7 @@ const items = computed(() => [
         {{ descriptionsData.price }}
       </el-tag>
     </template>
-  </ElpDescriptions>
+  </EplDescriptions>
 </template>
 ```
 

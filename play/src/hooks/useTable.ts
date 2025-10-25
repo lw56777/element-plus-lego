@@ -1,7 +1,7 @@
 import { computed } from 'vue';
 import { ElMessage } from 'element-plus';
 import { usePagination } from '@element-plus-pro/hooks';
-import { useElpDialog } from '@element-plus-pro/components';
+import { useEplDialog } from '@element-plus-pro/components';
 import { getTableData } from '~/request';
 import DialogContent from '~/components/DialogContent.vue';
 
@@ -51,7 +51,7 @@ export function useTable(service?: any) {
   };
 
   const openDialog = (row?: any) => {
-    const { createCancel, createConfirm } = useElpDialog(
+    const { createCancel, createConfirm } = useEplDialog(
       DialogContent,
       {
         row,
@@ -66,7 +66,7 @@ export function useTable(service?: any) {
   };
 
   const onDelete = async (row: any) => {
-    const { createConfirm, createCancel } = useElpDialog(
+    const { createConfirm, createCancel } = useEplDialog(
       '确定要删除吗？',
       {
         row,

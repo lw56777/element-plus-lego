@@ -9,4 +9,4 @@ export type TTableColumn = Compulsory<Partial<TableColumnCtx>, 'label'> & {
   header?: TCompType; // 自定义表头
 };
 
-export { default as ElpTableColumn } from './index.vue';
+export { default as EplTableColumn } from './index.vue';

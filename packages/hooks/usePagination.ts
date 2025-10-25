@@ -1,4 +1,4 @@
-import { computed, ref, watch } from 'vue';
+import { computed, ref, watch, type Ref } from 'vue';
 import type { PaginationProps } from 'element-plus';
 import { omit } from 'lodash-es';
 import { useRequest, type TService, type IOptions } from './useRequest';
@@ -11,10 +11,20 @@ interface IPagination {
 
 export type TPageProps = Partial<IPagination> & Partial<PaginationProps>;
 
+export interface IUsePaginationReturn {
+  pageProps: Ref<TPageProps>;
+  loading: Ref<boolean>;
+  params: Ref<any>;
+  pageSize: Ref<number>;
+  currentPage: Ref<number>;
+  data: Ref<any>;
+  run: () => void;
+}
+
 export function usePagination(
   service: TService,
   options: IOptions & { pagination?: TPageProps },
-) {
+): IUsePaginationReturn {
   const { params: defaultParams, pagination } = options;
 
   const {

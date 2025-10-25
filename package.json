@@ -1,23 +1,69 @@
 {
-  "name": "element-plus-pro",
-  "version": "1.0.0",
-  "main": "index.ts",
-  "private": true,
+  "name": "element-plus-lego",
+  "version": "1.3.0",
+  "description": "Element Plus 二次封装组件库，提供更强大和易用的企业级组件",
+  "main": "./dist/element-plus-lego.cjs.js",
+  "module": "./dist/element-plus-lego.es.js",
+  "types": "./dist/index.d.ts",
   "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/element-plus-lego.es.js",
+      "require": "./dist/element-plus-lego.cjs.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "dev": "pnpm --filter @element-plus-pro/play dev",
     "build": "pnpm --filter @element-plus-pro/play build",
+    "build:lib": "vite build && vue-tsc --declaration --emitDeclarationOnly --outDir dist",
     "preview": "pnpm --filter @element-plus-pro/play preview",
     "docs:dev": "pnpm --filter @element-plus-pro/docs dev",
     "docs:build": "pnpm --filter @element-plus-pro/docs build",
-    "docs:preview": "pnpm --filter @element-plus-pro/docs preview"
+    "docs:preview": "pnpm --filter @element-plus-pro/docs preview",
+    "prepublishOnly": "pnpm run build:lib"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "element-plus",
+    "components",
+    "ui",
+    "enterprise",
+    "pro",
+    "table",
+    "form",
+    "search"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/element-plus-pro"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/element-plus-pro/issues"
+  },
+  "homepage": "https://github.com/yourusername/element-plus-pro#readme",
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "vue": "^3.0.0",
+    "element-plus": "^2.0.0"
   },
   "dependencies": {
-    "vue": "^3.5.18",
-    "vue-router": "^4.5.1",
-    "element-plus": "^2.11.2",
-    "lodash-es": "^4.17.21",
-    "@element-plus/icons-vue": "^2.3.2"
+    "lodash-es": "^4.17.21"
+  },
+  "peerDependenciesMeta": {
+    "vue-router": {
+      "optional": true
+    },
+    "@element-plus/icons-vue": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.12",
@@ -33,9 +79,5 @@
     "vite": "^7.1.2",
     "vue-tsc": "^3.0.5",
     "code-inspector-plugin": "^1.2.10"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "Element Plus二次封装"
+  }
 }

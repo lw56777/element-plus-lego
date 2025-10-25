@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { ElpSearch } from '@element-plus-pro/components';
+import { EplSearch } from '@element-plus-pro/components';
 
 const params = ref({
   keywords: '',
@@ -49,11 +49,11 @@ const onRefresh = () => {
 </script>
 
 <template>
-  <ElpSearch
+  <EplSearch
     v-model="params"
     :items="items"
     @reset="onReset"
     @refresh="onRefresh"
     @search="onSearch"
-  ></ElpSearch>
+  ></EplSearch>
 </template>

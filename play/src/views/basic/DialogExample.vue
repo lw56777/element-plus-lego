@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { useElpDialog } from '@element-plus-pro/components';
+import { useEplDialog } from '@element-plus-pro/components';
 import DialogContent from '~/components/DialogContent.vue';
 
 const handleDialog = () => {
-  const { createConfirm, createCancel } = useElpDialog(
+  const { createConfirm, createCancel } = useEplDialog(
     DialogContent,
     {},
     {

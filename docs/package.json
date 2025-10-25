@@ -1,7 +1,7 @@
 {
   "name": "@element-plus-pro/docs",
   "version": "1.0.0",
-  "description": "Element Plus Pro 组件库文档",
+  "description": "Element Plus Lego 组件库文档",
   "scripts": {
     "dev": "vitepress dev",
     "build": "vitepress build",

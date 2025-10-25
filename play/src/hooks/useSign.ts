@@ -1,7 +1,7 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { ElMessage, type FormRules } from 'element-plus';
-import { useElpForm, type TFormItem } from '@element-plus-pro/components';
+import { useEplForm, type TFormItem } from '@element-plus-pro/components';
 
 interface ISignInForm {
   username: string;
@@ -54,7 +54,7 @@ export function useSignIn() {
   const router = useRouter();
 
   const signInForm = ref(new CSignInForm());
-  const { formComp: SignInFormComp, validate } = useElpForm({
+  const { formComp: SignInFormComp, validate } = useEplForm({
     modelValue: signInForm,
     rules: signInRules,
     items: signInFormItems,
@@ -98,7 +98,7 @@ export function useSignUp() {
     },
   ];
 
-  const { formComp: SignUpFormComp, validate: validateSignUpForm } = useElpForm(
+  const { formComp: SignUpFormComp, validate: validateSignUpForm } = useEplForm(
     {
       modelValue: signUpForm,
       rules: signUpRules,
