@@ -42,7 +42,7 @@ defineExpose({} as ComponentInstance<typeof ElDescriptions>);
 </script>
 
 <template>
-  <div class="ba-descriptions">
+  <div class="epl-descriptions">
     <el-descriptions v-bind="$attrs">
       <el-descriptions-item
         v-for="item in items"

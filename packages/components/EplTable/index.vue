@@ -30,7 +30,7 @@ defineExpose({} as ComponentInstance<typeof ElTable>);
 </script>
 
 <template>
-  <div class="elp-table">
+  <div class="epltable">
     <el-table :data="tableData" v-bind="$attrs">
       <EplTableColumn :columns="columns">
         <template v-for="(_, name) in $slots" :key="name" #[name]="slotData">
@@ -39,7 +39,7 @@ defineExpose({} as ComponentInstance<typeof ElTable>);
       </EplTableColumn>
     </el-table>
 
-    <div class="flex justify-end mt-10">
+    <div class="epl-table__pagination">
       <el-pagination
         v-model:currentPage="currentPage"
         v-model:page-size="pageSize"
@@ -48,3 +48,13 @@ defineExpose({} as ComponentInstance<typeof ElTable>);
     </div>
   </div>
 </template>
+
+<style lang="scss">
+.epl-table {
+  &__pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2.5rem;
+  }
+}
+</style>

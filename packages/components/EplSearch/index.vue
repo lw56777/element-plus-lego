@@ -99,11 +99,8 @@ defineExpose({} as TProps);
 </script>
 
 <template>
-  <el-form
-    class="ba-search flex flex-wrap items-center justify-start gap-4"
-    @submit.prevent
-  >
-    <div class="conditions flex flex-wrap gap-4">
+  <el-form class="epl-search" @submit.prevent>
+    <div class="epl-search__conditions">
       <template v-if="items.length">
         <template v-for="item of items" :key="item.prop">
           <el-form-item v-bind="item">
@@ -125,7 +122,7 @@ defineExpose({} as TProps);
       </template>
     </div>
 
-    <div class="actions flex-1 flex justify-end gap-4">
+    <div class="epl-search__actions">
       <template v-if="emits.length">
         <template v-for="item of emits" :key="item.name">
           <slot :name="item.prop">
@@ -152,8 +149,18 @@ defineExpose({} as TProps);
 </template>
 
 <style lang="scss">
-.ba-search {
-  .conditions {
+.epl-search {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+
+  &__conditions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
     .el-form-item {
       margin-bottom: 0;
 
@@ -163,7 +170,12 @@ defineExpose({} as TProps);
     }
   }
 
-  .actions {
+  &__actions {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+
     .el-button {
       margin: 0;
     }
