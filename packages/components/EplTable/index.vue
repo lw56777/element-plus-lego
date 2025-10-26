@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed, type ComponentInstance, type PropType } from 'vue';
 import { ElTable } from 'element-plus';
-import { omit } from 'lodash-es';
 import type { TPageProps } from '@element-plus-lego/hooks';
+import { omit } from 'lodash-es';
 import { EplTableColumn, type TTableColumn } from '../EplTableColumn';
 
 const props = defineProps({
@@ -30,7 +30,7 @@ defineExpose({} as ComponentInstance<typeof ElTable>);
 </script>
 
 <template>
-  <div class="epltable">
+  <div class="epl-table">
     <el-table :data="tableData" v-bind="$attrs">
       <EplTableColumn :columns="columns">
         <template v-for="(_, name) in $slots" :key="name" #[name]="slotData">

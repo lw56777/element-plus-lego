@@ -17,32 +17,6 @@ export function __setGlobalComponentMap(
   globalComponentMap = componentMap;
 }
 
-/**
- * 动态组件 Hook
- *
- * @description
- * 用于动态渲染组件，支持字符串类型、组件对象和渲染函数
- * 需要在插件注册时配置 componentMap
- *
- * @param initType 默认组件类型（可选）
- * @returns 包含 componentMap 和 getComponent 方法的对象
- *
- * @example
- * // 在组件中使用
- * const { getComponent } = useDynamicComponent('input');
- *
- * @example
- * // 使用字符串获取组件
- * const component = getComponent('button');
- *
- * @example
- * // 使用组件对象
- * const component = getComponent(ElButton);
- *
- * @example
- * // 使用渲染函数
- * const component = getComponent((scope) => h('div', scope.row.value), scope);
- */
 export function useDynamicComponent(initType?: string): {
   componentMap: Record<string, Component>;
   getComponent: (type: unknown, scope?: any) => any;

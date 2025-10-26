@@ -3,6 +3,27 @@ import type { PaginationProps } from 'element-plus';
 import { omit } from 'lodash-es';
 import { useRequest, type TService, type IOptions } from './useRequest';
 
+export type TGlobalPagination = {
+  totalKey?: string;
+  pageSizeKey?: string;
+  currentPageKey?: string;
+  pageSize?: number;
+}
+
+/**
+ * 全局分页配置
+ * 通过插件注册时的 pagination 选项配置
+ */
+let globalPagination: TGlobalPagination = {};
+
+/**
+ * 设置全局分页配置（内部函数）
+ * @internal
+ */
+export function __setGlobalPagination(pagination: TGlobalPagination): void {
+  globalPagination = pagination;
+}
+
 interface IPagination {
   totalKey: string;
   pageSizeKey: string;
@@ -33,7 +54,10 @@ export function usePagination(
     currentPageKey = 'currentPage',
     pageSize = 10,
     currentPage = 1,
-  } = pagination || {};
+  } = {
+    ...globalPagination,
+    ...pagination,
+  };
 
   const { loading, params, data, run } = useRequest(service, {
     ...omit(options, ['params', 'pagination']),

@@ -154,10 +154,14 @@ pnpm install element-plus-lego
 ### 引入
 
 ```typescript
+import { createApp } from 'vue';
 import 'element-plus/dist/index.css';
 import 'element-plus/theme-chalk/dark/css-vars.css';
 import { ElInput } from 'element-plus';
 import ElementPlusLego from 'element-plus-lego';
+import App from './App.vue';
+
+const app = createApp(App);
 
 // 动态组件映射
 const componentMap = {
@@ -165,7 +169,16 @@ const componentMap = {
   // ...
 };
 
+// 动态组件配置
 app.use(ElementPlusLego, componentMap);
+
+// 分页配置
+// const pagination = { ... }
+
+// 多项配置
+// app.use(ElementPlusLego, { componentMap, pagination });
+
+app.mount('#app');
 ```
 
 ## 🔄 版本更新流程

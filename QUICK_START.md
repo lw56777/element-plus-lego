@@ -75,15 +75,23 @@ import { ElInput } from 'element-plus';
 import ElementPlusLego from 'element-plus-lego';
 import App from './App.vue';
 
+const app = createApp(App);
+
 // 动态组件映射
 const componentMap = {
   input: ElInput,
   // ...
 };
 
-const app = createApp(App);
-
+// 动态组件配置
 app.use(ElementPlusLego, componentMap);
+
+// 分页配置
+// const pagination = { ... }
+
+// 多项配置
+// app.use(ElementPlusLego, { componentMap, pagination });
+
 app.mount('#app');
 ```
 
@@ -119,7 +127,6 @@ app.mount('#app');
 
 - `Optional<T, K>` - 将指定属性变为可选
 - `Compulsory<T, K>` - 将指定属性变为必选
-- `TCompType` - 组件类型
 
 ## 🔄 更新版本
 
