@@ -1,9 +1,10 @@
 import DefaultTheme from 'vitepress/theme';
-import ElementPlus from 'element-plus';
+import ElementPlus, { ElCheckbox, ElDatePicker, ElInput, ElSelect, ElSwitch, ElTag } from 'element-plus';
 import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 import 'element-plus/dist/index.css';
 import 'element-plus/theme-chalk/dark/css-vars.css';
 import * as ElementPlusLego from '@element-plus-lego/components';
+import { __setGlobalComponentMap } from '@element-plus-lego/hooks/useDynamicComponent';
 import Demo from './components/demo.vue';
 import './custom.css';
 
@@ -22,6 +23,16 @@ export default {
       if (key.startsWith('Epl')) {
         app.component(key, ElementPlusLego[key]);
       }
+    });
+
+    // 设置全局组件映射，用于动态组件
+    __setGlobalComponentMap({
+      'input': ElInput,
+      'select': ElSelect,
+      'switch': ElSwitch,
+      'tag': ElTag,
+      'date': ElDatePicker,
+      'checkbox': ElCheckbox,
     });
 
     // 注册 Demo 组件

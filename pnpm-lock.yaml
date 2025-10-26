@@ -69,6 +69,9 @@ importers:
       '@element-plus-lego/components':
         specifier: workspace:*
         version: link:../packages/components
+      '@element-plus-lego/hooks':
+        specifier: workspace:*
+        version: link:../packages/hooks
       '@element-plus/icons-vue':
         specifier: ^2.3.2
         version: 2.3.2(vue@3.5.22(typescript@5.8.3))

@@ -8,11 +8,11 @@
 
 <script setup>
 import { ref, computed } from 'vue';
+import { ElMessage } from 'element-plus';
 
 const params = ref({
   keywords: '',
   region: 'beijing',
-  date: [],
 });
 
 const items = computed(() => [
@@ -20,6 +20,9 @@ const items = computed(() => [
     label: '关键词',
     prop: 'keywords',
     compType: 'input',
+    compProps: {
+      placeholder: '回车触发搜索',
+    },
   },
   {
     label: '地区',
@@ -35,23 +38,18 @@ const items = computed(() => [
       ],
     },
   },
-  {
-    label: '时间',
-    prop: 'date',
-    compType: 'date',
-  },
 ]);
 
 const onSearch = () => {
-  console.log('搜索参数:', params.value);
+  ElMessage.primary('搜索')
 };
 
 const onReset = () => {
-  console.log('重置');
+  ElMessage('重置')
 };
 
 const onRefresh = () => {
-  console.log('刷新');
+  ElMessage.success('刷新')
 };
 </script>
 
@@ -69,12 +67,12 @@ const onRefresh = () => {
 ```vue
 <script setup lang="ts">
 import { ref, computed } from 'vue';
+import { ElMessage } from 'element-plus';
 import { EplSearch } from '@element-plus-lego/components';
 
 const params = ref({
   keywords: '',
   region: 'beijing',
-  date: [],
 });
 
 const items = computed(() => [
@@ -82,6 +80,9 @@ const items = computed(() => [
     label: '关键词',
     prop: 'keywords',
     compType: 'input',
+    compProps: {
+      placeholder: '回车触发搜索',
+    },
   },
   {
     label: '地区',
@@ -92,13 +93,23 @@ const items = computed(() => [
       options: [
         { label: '北京', value: 'beijing' },
         { label: '上海', value: 'shanghai' },
+        { label: '广州', value: 'guangzhou' },
+        { label: '深圳', value: 'shenzhen' },
       ],
     },
   },
 ]);
 
 const onSearch = () => {
-  console.log('搜索');
+  ElMessage.primary('搜索')
+};
+
+const onReset = () => {
+  ElMessage('重置')
+};
+
+const onRefresh = () => {
+  ElMessage.success('刷新')
 };
 <\/script>
 

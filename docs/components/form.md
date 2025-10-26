@@ -4,7 +4,7 @@
 
 <script setup>
 import { h, ref, computed } from 'vue';
-import { ElSwitch } from 'element-plus';
+import { ElSwitch, ElSelect } from 'element-plus';
 import { useEplForm } from '@element-plus-lego/components';
 
 // 基础用法 demo

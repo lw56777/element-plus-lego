@@ -8,12 +8,14 @@
 
 <script setup>
 import { h } from 'vue';
-import { ElMessage } from 'element-plus';
 import { useEplDialog } from '@element-plus-lego/components';
 
 const DialogContent = {
-  setup() {
-    return () => h('div', { style: { padding: '20px' } }, '这是对话框内容');
+  props: {
+    text: String
+  },
+  setup(props) {
+    return () => h('div', {}, `对话框内容：${props.text}`);
   }
 };
 
@@ -21,7 +23,7 @@ const handleDialog = () => {
   const { instnce, createConfirm, createCancel } = useEplDialog(
     DialogContent,
     {
-      value: '传给内容组件的属性'
+      text: '传给内容组件的属性'
     },
     {
       title: '弹窗标题',
@@ -31,14 +33,14 @@ const handleDialog = () => {
           name: '获取实例',
           type: 'success',
           click: () => {
-            console.log('我自己处理', instnce.value);
+            console.log('实例', instnce.value);
           },
         }),
         createConfirm({
-          name: '示例方法名并且不关闭窗口',
+          name: '不关闭窗口',
           type: 'warning',
           hidden: false,
-          click: 'reset',
+          click: 'reset', // 实例上的方法名
         }),
         createConfirm(),
         createCancel(),
@@ -56,13 +58,21 @@ const handleDialog = () => {
 ```vue
 <script setup lang="ts">
 import { useEplDialog } from '@element-plus-lego/components';
-import DialogContent from './DialogContent.vue';
+
+const DialogContent = {
+  props: {
+    text: String
+  },
+  setup(props) {
+    return () => h('div', {}, `对话框内容：${props.text}`);
+  }
+};
 
 const handleDialog = () => {
   const { instnce, createConfirm, createCancel } = useEplDialog(
     DialogContent,
     {
-      value: '传给内容组件的属性'
+      text: '传给内容组件的属性'
     },
     {
       title: '弹窗标题',
@@ -72,14 +82,14 @@ const handleDialog = () => {
           name: '获取实例',
           type: 'success',
           click: () => {
-            console.log('我自己处理', instnce.value);
+            console.log('实例', instnce.value);
           },
         }),
         createConfirm({
-          name: '示例方法名',
+          name: '不关闭窗口',
           type: 'warning',
           hidden: false,
-          click: 'reset',
+          click: 'reset', // 实例上的方法名
         }),
         createConfirm(),
         createCancel(),
