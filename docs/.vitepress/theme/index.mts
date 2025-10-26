@@ -5,6 +5,7 @@ import 'element-plus/dist/index.css';
 import 'element-plus/theme-chalk/dark/css-vars.css';
 import * as ElementPlusLego from '@element-plus-lego/components';
 import Demo from './components/demo.vue';
+import './custom.css';
 
 export default {
   extends: DefaultTheme,

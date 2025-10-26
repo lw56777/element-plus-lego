@@ -1,0 +1,80 @@
+/* Element Plus Lego 自定义样式 */
+
+/* 设置 VitePress Hero 图片背景变量 */
+:root {
+  --vp-home-hero-image-background-image: radial-gradient(
+    circle at center,
+    rgba(215, 102, 64, 1) 0%,
+    rgba(215, 102, 64, 0.7) 20%,
+    rgba(215, 102, 64, 0.45) 45%,
+    rgba(215, 102, 64, 0.25) 77%,
+    rgba(215, 102, 64, 0.03) 88%,
+    rgba(215, 102, 64, 0.01) 98%,
+    rgba(215, 102, 64, 0) 100%   
+  );
+  --vp-home-hero-image-filter: blur(55px);
+}
+
+/* Hero 区域 logo 背景 - 创建渐变背景圆圈 */
+.VPHero .VPImage {
+  border-radius: 50%;
+  padding: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  inset: auto;
+  transform: none;
+}
+
+/* 创建发光效果 */
+
+
+/* 确保图片本身透明 */
+.VPHero .VPImage img {
+  background: transparent !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .VPHero .VPImage {
+    padding: 15px;
+  }
+}
+
+/* 品牌色彩主题 - 使用 #d46740 主色调 */
+:root {
+  --vp-c-brand-1: #d46740;
+  --vp-c-brand-2: #f4a261;
+  --vp-c-brand-3: #b8543a;
+}
+
+/* 按钮样式优化 */
+.VPButton.brand {
+  background: linear-gradient(135deg, #d46740 0%, #f4a261 100%);
+  border: none;
+}
+
+.VPButton.brand:hover {
+  background: linear-gradient(135deg, #b8543a 0%, #d46740 100%);
+}
+
+/* Features 卡片悬停效果 */
+.VPFeature {
+  transition: all 0.3s ease;
+}
+
+.VPFeature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(212, 103, 64, 0.15);
+}
+
+/* 导航栏 logo 样式 */
+.VPNavBarTitle .logo {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.VPNavBarTitle .logo:hover {
+  transform: scale(1.1);
+}
