@@ -12,7 +12,7 @@
       "import": "./dist/element-plus-lego.es.js",
       "require": "./dist/element-plus-lego.cjs.js"
     },
-    "./dist/style.css": "./dist/style.css"
+    "./dist/index.css": "./dist/index.css"
   },
   "files": [
     "dist",

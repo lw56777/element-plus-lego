@@ -15,22 +15,6 @@ export default defineConfig({
         find: '~',
         replacement: resolve(__dirname, 'src'),
       },
-      {
-        find: '@bricklayer/components',
-        replacement: resolve(__dirname, '../../packages/components'),
-      },
-      {
-        find: '@bricklayer/hooks',
-        replacement: resolve(__dirname, '../../packages/hooks'),
-      },
-      {
-        find: '@bricklayer/styles',
-        replacement: resolve(__dirname, '../../packages/styles'),
-      },
-      {
-        find: '@bricklayer/utils',
-        replacement: resolve(__dirname, '../../packages/utils'),
-      },
     ],
   },
   plugins: [

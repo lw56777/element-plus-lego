@@ -32,6 +32,13 @@ export default defineConfig({
           'vue-router': 'VueRouter',
         },
         exports: 'named',
+        // 设置 CSS 输出文件名
+        assetFileNames: assetInfo => {
+          if (assetInfo.name === 'style.css') {
+            return 'index.css';
+          }
+          return assetInfo.name || 'asset';
+        },
       },
     },
     outDir: 'dist',

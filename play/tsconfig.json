@@ -4,13 +4,7 @@
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "baseUrl": ".",
     "paths": {
-      "~/*": ["src/*"],
-      "@bricklayer/components": ["../../packages/components"],
-      "@bricklayer/components/*": ["../../packages/components/*"],
-      "@bricklayer/hooks": ["../../packages/hooks"],
-      "@bricklayer/hooks/*": ["../../packages/hooks/*"],
-      "@bricklayer/utils": ["../../packages/utils"],
-      "@bricklayer/utils/*": ["../../packages/utils/*"]
+      "~/*": ["src/*"]
     },
     "types": ["vite/client"],
     "allowJs": true,
