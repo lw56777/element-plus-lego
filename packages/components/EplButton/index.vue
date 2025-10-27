@@ -4,11 +4,18 @@ import { omit } from 'lodash-es';
 import { isFunction } from '@element-plus-lego/utils';
 
 const loading = ref(false);
-
+const props = defineProps({
+  isLoading: {
+    type: Boolean,
+    default: true,
+  },
+});
 const attrs = useAttrs();
 const onClick = async () => {
   try {
-    loading.value = true;
+    if (props.isLoading) {
+      loading.value = true;
+    }
 
     if (isFunction(attrs.onClick)) {
       await (attrs.onClick as Function)();

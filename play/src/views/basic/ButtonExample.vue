@@ -14,5 +14,8 @@ const onClick = async () => {
     <EplButton type="info" @click="onClick">Info</EplButton>
     <EplButton type="warning" @click="onClick">Warning</EplButton>
     <EplButton type="danger" @click="onClick">Danger</EplButton>
+    <EplButton type="danger" @click="onClick" :is-loading="false">
+      没有loading
+    </EplButton>
   </div>
 </template>

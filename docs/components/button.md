@@ -36,6 +36,9 @@ const onClick = async () => {
   <EplButton type="info" @click="onClick">Info</EplButton>
   <EplButton type="warning" @click="onClick">Warning</EplButton>
   <EplButton type="danger" @click="onClick">Danger</EplButton>
+  <EplButton type="danger" @click="onClick" :is-loading="false">
+    没有loading
+  </EplButton>
 </template>
 ```
 
@@ -53,6 +56,12 @@ const onClick = async () => {
 ### 属性
 
 继承 Element Plus Button 的所有属性。
+
+| 属性名 | 说明 | 类型 | 默认值 |
+| ------ | ---- | ---- | ------ |
+| is-loading | 是否需要显示加载状态 | boolean | true |
+
+
 
 ### 事件
 
