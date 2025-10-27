@@ -1,6 +1,6 @@
 {
   "name": "element-plus-lego",
-  "version": "1.5.4",
+  "version": "1.5.5",
   "description": "Element Plus 二次封装组件库，提供更强大和易用的企业级组件",
   "main": "./dist/element-plus-lego.cjs.js",
   "module": "./dist/element-plus-lego.es.js",
