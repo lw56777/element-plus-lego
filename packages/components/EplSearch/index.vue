@@ -1,7 +1,13 @@
 <script setup lang="ts">
 import { getCurrentInstance, computed, type PropType } from 'vue';
+import {
+  ElButton,
+  ElForm,
+  ElFormItem,
+  ElSpace,
+  type FormRules,
+} from 'element-plus';
 import { Search, Refresh, RefreshLeft } from '@element-plus/icons-vue';
-import { ElButton, ElForm, ElFormItem, type FormRules } from 'element-plus';
 import { isFunction } from '@element-plus-lego/utils';
 import { useDynamicComponent } from '@element-plus-lego/hooks';
 import type { TFormItem } from '../EplForm';
@@ -78,9 +84,9 @@ const getAttrs = (item: any): TEmitsAttrs | false => {
 
 const emitOrder = ['onSearch', 'onReset', 'onRefresh'];
 const defaultEmits = computed(() => {
-  if (props.emits.length > 0) {
-    return [];
-  }
+  // if (props.emits.length > 0) {
+  //   return [];
+  // }
 
   return emitOrder.reduce((pre, cur) => {
     if (isFunction(attrs[cur])) {
@@ -120,10 +126,8 @@ defineExpose({} as TProps);
           <slot :name="name" />
         </el-form-item>
       </template>
-    </div>
 
-    <div class="epl-search__actions">
-      <template v-if="emits.length">
+      <el-space class="epl-search__actions">
         <template v-for="item of emits" :key="item.name">
           <slot :name="item.prop">
             <component
@@ -135,15 +139,13 @@ defineExpose({} as TProps);
             </component>
           </slot>
         </template>
-      </template>
 
-      <template v-else>
         <template v-for="(item, index) of defaultEmits" :key="index">
           <el-button v-if="item" v-bind="item">
             {{ item.name }}
           </el-button>
         </template>
-      </template>
+      </el-space>
     </div>
   </el-form>
 </template>
@@ -157,6 +159,7 @@ defineExpose({} as TProps);
   gap: 1rem;
 
   &__conditions {
+    flex: 1;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
@@ -174,11 +177,6 @@ defineExpose({} as TProps);
     flex: 1;
     display: flex;
     justify-content: flex-end;
-    gap: 1rem;
-
-    .el-button {
-      margin: 0;
-    }
   }
 }
 </style>
