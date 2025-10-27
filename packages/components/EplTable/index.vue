@@ -5,7 +5,7 @@ import {
   type ComponentInstance,
   type PropType,
 } from 'vue';
-import { ElTable } from 'element-plus';
+import { ElTable, ElPagination } from 'element-plus';
 import type { TPageProps } from '@element-plus-lego/hooks';
 import { omit } from 'lodash-es';
 import { EplTableColumn, type TTableColumn } from '../EplTableColumn';

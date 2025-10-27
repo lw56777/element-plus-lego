@@ -1,7 +1,14 @@
 <script setup lang="ts">
 import { useTemplateRef, computed } from 'vue';
 import type { PropType } from 'vue';
-import type { FormInstance, FormRules } from 'element-plus';
+import {
+  ElForm,
+  ElFormItem,
+  ElRow,
+  ElCol,
+  type FormInstance,
+  type FormRules,
+} from 'element-plus';
 import { useDynamicComponent } from '@element-plus-lego/hooks';
 import type { TFormItem } from '.';
 

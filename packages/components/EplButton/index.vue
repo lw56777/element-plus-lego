@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, useAttrs } from 'vue';
+import { ElButton } from 'element-plus';
 import { omit } from 'lodash-es';
 import { isFunction } from '@element-plus-lego/utils';
 
