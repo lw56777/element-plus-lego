@@ -34,7 +34,7 @@ export default defineConfig({
         exports: 'named',
         // 设置 CSS 输出文件名
         assetFileNames: assetInfo => {
-          if (assetInfo.name === 'style.css') {
+          if (assetInfo.name?.endsWith('.css')) {
             return 'index.css';
           }
           return assetInfo.name || 'asset';
