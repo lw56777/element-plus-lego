@@ -73,6 +73,7 @@ import 'element-plus/dist/index.css';
 import 'element-plus/theme-chalk/dark/css-vars.css';
 import { ElInput } from 'element-plus';
 import ElementPlusLego from 'element-plus-lego';
+import 'element-plus-lego/dist/index.css';
 import App from './App.vue';
 
 const app = createApp(App);
