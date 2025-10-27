@@ -1,4 +1,4 @@
-import { isRef, ref } from 'vue';
+import { ref, toRef } from 'vue';
 import { debounce } from 'lodash-es';
 import { isArray } from '@element-plus-lego/utils';
 
@@ -8,7 +8,7 @@ export interface IOptions {
   initData?: any; // 初始值
   immediate?: boolean; // 是否立即执行
   delay?: number; // 防抖等待时间
-  params?: any; // 请求参数
+  params?: ReturnType<typeof toRef>; // 请求参数
 }
 
 const defaultOptions: IOptions = {
@@ -29,7 +29,7 @@ export function useRequest(service: TService, options?: IOptions) {
   };
 
   const loading = ref(false);
-  const params = isRef(_params) ? _params : ref(_params);
+  const params = toRef(_params);
   const data = ref(initData);
   const error = ref(null);
   const isArr = isArray(service);
@@ -48,7 +48,6 @@ export function useRequest(service: TService, options?: IOptions) {
 
     Promise.all(queue)
       .then(res => {
-        console.log('res', res);
         data.value = isArr ? res.map(item => item.data) : res[0].data;
       })
       .catch(err => {

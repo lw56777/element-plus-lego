@@ -7,6 +7,7 @@ import 'element-plus/dist/index.css';
 import 'element-plus/theme-chalk/dark/css-vars.css';
 
 import {
+  ElButton,
   ElInput,
   ElCascader,
   ElCheckbox,
@@ -20,6 +21,7 @@ import ElementPlusLego from '../../index';
 const app = createApp(App);
 
 const componentMap = {
+  button: ElButton,
   input: ElInput,
   cascader: ElCascader,
   checkbox: ElCheckbox,
@@ -29,7 +31,14 @@ const componentMap = {
   switch: ElSwitch,
 };
 
-app.use(ElementPlusLego, componentMap);
+const pagination = {
+  pageSize: 20,
+};
+
+app.use(ElementPlusLego, {
+  componentMap,
+  pagination,
+});
 
 app.use(router);
 router.isReady().then(() => {

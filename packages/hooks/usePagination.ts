@@ -1,4 +1,4 @@
-import { computed, ref, watch, type Ref } from 'vue';
+import { computed, ref, toRef, watch, type Ref } from 'vue';
 import type { PaginationProps } from 'element-plus';
 import { omit } from 'lodash-es';
 import { useRequest, type TService, type IOptions } from './useRequest';
@@ -8,7 +8,7 @@ export type TGlobalPagination = {
   pageSizeKey?: string;
   currentPageKey?: string;
   pageSize?: number;
-}
+};
 
 /**
  * 全局分页配置
@@ -47,7 +47,7 @@ export function usePagination(
   options: IOptions & { pagination?: TPageProps },
 ): IUsePaginationReturn {
   const { params: defaultParams, pagination } = options;
-
+  const _defaultParams = toRef(defaultParams);
   const {
     totalKey = 'total',
     pageSizeKey = 'pageSize',
@@ -62,7 +62,7 @@ export function usePagination(
   const { loading, params, data, run } = useRequest(service, {
     ...omit(options, ['params', 'pagination']),
     params: {
-      ...defaultParams.value,
+      ..._defaultParams.value,
       [pageSizeKey]: pageSize,
       [currentPageKey]: currentPage,
     },

@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import { computed, type ComponentInstance, type PropType } from 'vue';
+import {
+  computed,
+  getCurrentInstance,
+  type ComponentInstance,
+  type PropType,
+} from 'vue';
 import { ElTable } from 'element-plus';
 import type { TPageProps } from '@element-plus-lego/hooks';
 import { omit } from 'lodash-es';
@@ -26,12 +31,18 @@ const pageProps = computed(() =>
   omit(props.pageProps, ['pageSize', 'currentPage']),
 );
 
+const tableInstance = getCurrentInstance();
+
+const tableRef = exposed => {
+  tableInstance.exposed = exposed;
+};
+
 defineExpose({} as ComponentInstance<typeof ElTable>);
 </script>
 
 <template>
   <div class="epl-table">
-    <el-table :data="tableData" v-bind="$attrs">
+    <el-table :data="tableData" v-bind="$attrs" :ref="tableRef">
       <EplTableColumn :columns="columns">
         <template v-for="(_, name) in $slots" :key="name" #[name]="slotData">
           <slot :name="name" v-bind="slotData" />

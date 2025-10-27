@@ -1,9 +1,23 @@
 <script setup lang="ts">
-import { h, ref, computed, type ComputedRef } from 'vue';
+import {
+  h,
+  ref,
+  computed,
+  useTemplateRef,
+  onMounted,
+  type ComputedRef,
+} from 'vue';
 import { ElTag, ElSwitch } from 'element-plus';
 import { EplTable, type TTableColumn } from '@element-plus-lego/components';
 import HeaderComp from '~/components/HeaderComp.vue';
 import AgeComp from '~/components/AgeComp.vue';
+
+const tableRef = useTemplateRef('tableRef');
+
+onMounted(() => {
+  console.log('tableRef', tableRef.value);
+  tableRef.value.clearFilter();
+});
 
 const tableData = ref([
   {
@@ -138,7 +152,7 @@ const columns: ComputedRef<TTableColumn[]> = computed(() => [
 </script>
 
 <template>
-  <EplTable v-model="tableData" :columns="columns" border>
+  <EplTable ref="tableRef" v-model="tableData" :columns="columns" border>
     <template #name="{ row }">
       <el-tag type="success" size="large">{{ row.name }}</el-tag>
     </template>

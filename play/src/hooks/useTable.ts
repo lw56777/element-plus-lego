@@ -19,9 +19,9 @@ class CParams implements IParams {
   check = false;
 }
 
-export function useTable(service?: any) {
+export function useTable() {
   const { loading, params, data, run, pageProps, pageSize, currentPage } =
-    usePagination(service || getTableData, {
+    usePagination(getTableData, {
       initData: [],
       params: new CParams(),
     });
