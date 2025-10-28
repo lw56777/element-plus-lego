@@ -10,7 +10,7 @@
     rgba(215, 102, 64, 0.25) 77%,
     rgba(215, 102, 64, 0.03) 88%,
     rgba(215, 102, 64, 0.01) 98%,
-    rgba(215, 102, 64, 0) 100%   
+    rgba(215, 102, 64, 0) 100%
   );
   --vp-home-hero-image-filter: blur(55px);
 }
@@ -21,18 +21,20 @@
   padding: 20px;
   transition: all 0.3s ease;
   position: relative;
-  inset: auto;
-  transform: none;
 }
-
-/* 创建发光效果 */
-
 
 /* 确保图片本身透明 */
 .VPHero .VPImage img {
   background: transparent !important;
   position: relative;
   z-index: 1;
+}
+
+@media (width > 768px) {
+  .VPHero .VPImage {
+    inset: auto;
+    transform: none;
+  }
 }
 
 /* 响应式设计 */

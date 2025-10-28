@@ -283,6 +283,10 @@ const columns: ComputedRef<TTableColumn[]> = computed(() => [
 
 <template>
   <EplTable v-model="tableData" :columns="columns" border>
+    <template #name="{ row }">
+      <el-tag type="success" size="large">{{ row.name }}</el-tag>
+    </template>
+    <template #nameHeader="{ column }">自定义: {{ column.label }}</template>
     <template #actions="{ row }">
       <el-button @click="console.log(row)">查看</el-button>
     </template>

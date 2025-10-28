@@ -32,31 +32,24 @@ import { EplTable } from '@element-plus-lego/components';
 import { usePagination } from 'element-plus-lego';
 
 // 模拟 API 请求
-const fetchUsers = async (params) => {
+const fetchUsers = async params => {
   const response = await fetch('/api/users', {
     method: 'POST',
-    body: JSON.stringify(params)
+    body: JSON.stringify(params),
   });
   return response.json();
 };
 
 // 使用分页 hook
-const {
-  pageProps,
-  loading,
-  params,
-  pageSize,
-  currentPage,
-  data,
-  run
-} = usePagination(fetchUsers, {
-  pagination: {
-    totalKey: 'total',
-    pageSizeKey: 'pageSize',
-    currentPageKey: 'currentPage',
-    pageSize: 10
-  }
-});
+const { pageProps, loading, params, pageSize, currentPage, data, run } =
+  usePagination(fetchUsers, {
+    pagination: {
+      totalKey: 'total',
+      pageSizeKey: 'pageSize',
+      currentPageKey: 'currentPage',
+      pageSize: 10,
+    },
+  });
 
 // 表格列配置
 const columns = computed(() => [
@@ -64,20 +57,20 @@ const columns = computed(() => [
     prop: 'name',
     label: '姓名',
     width: '180',
-    compType: 'input'
+    compType: 'input',
   },
   {
     prop: 'age',
     label: '年龄',
     compType: 'input',
     compProps: {
-      type: 'number'
-    }
+      type: 'number',
+    },
   },
   {
     prop: 'email',
     label: '邮箱',
-    compType: 'input'
+    compType: 'input',
   },
   {
     prop: 'status',
@@ -86,10 +79,10 @@ const columns = computed(() => [
     compProps: {
       options: [
         { label: '启用', value: 'active' },
-        { label: '禁用', value: 'inactive' }
-      ]
-    }
-  }
+        { label: '禁用', value: 'inactive' },
+      ],
+    },
+  },
 ]);
 </script>
 ```
@@ -100,12 +93,12 @@ const columns = computed(() => [
 <template>
   <div>
     <!-- 搜索表单 -->
-    <EplSearch 
-      v-model="searchParams" 
-      :items="searchItems" 
+    <EplSearch
+      v-model="searchParams"
+      :items="searchItems"
       :emits="searchEmits"
     />
-    
+
     <!-- 数据表格 -->
     <EplTable
       v-loading="loading"
@@ -118,7 +111,9 @@ const columns = computed(() => [
     >
       <template #actions="{ row }">
         <el-button type="primary" link @click="handleEdit(row)">编辑</el-button>
-        <el-button type="danger" link @click="handleDelete(row)">删除</el-button>
+        <el-button type="danger" link @click="handleDelete(row)">
+          删除
+        </el-button>
       </template>
     </EplTable>
   </div>
@@ -133,7 +128,7 @@ import { usePagination } from 'element-plus-lego';
 const searchParams = ref({
   name: '',
   status: '',
-  department: 'IT'
+  department: 'IT',
 });
 
 // 搜索表单项配置
@@ -143,8 +138,8 @@ const searchItems = computed(() => [
     prop: 'name',
     compType: 'input',
     compProps: {
-      placeholder: '请输入姓名'
-    }
+      placeholder: '请输入姓名',
+    },
   },
   {
     label: '状态',
@@ -154,10 +149,10 @@ const searchItems = computed(() => [
       placeholder: '请选择状态',
       options: [
         { label: '启用', value: 'active' },
-        { label: '禁用', value: 'inactive' }
-      ]
-    }
-  }
+        { label: '禁用', value: 'inactive' },
+      ],
+    },
+  },
 ]);
 
 // 搜索按钮配置
@@ -166,44 +161,37 @@ const searchEmits = [
     type: 'primary',
     name: '搜索',
     nativeType: 'submit',
-    onClick: handleSearch
+    onClick: handleSearch,
   },
   {
     name: '重置',
-    onClick: handleReset
-  }
+    onClick: handleReset,
+  },
 ];
 
 // 自定义分页配置
-const {
-  pageProps,
-  loading,
-  params,
-  pageSize,
-  currentPage,
-  data,
-  run
-} = usePagination(fetchUsers, {
-  // 初始参数
-  params: searchParams,
-  
-  // 分页配置
-  pagination: {
-    totalKey: 'totalCount',      // 后端返回的总数字段
-    pageSizeKey: 'size',         // 后端接收的每页大小字段
-    currentPageKey: 'pageNum',  // 后端接收的页码字段
-    pageSize: 20,               // 默认每页条数
-    
-    // Element Plus Pagination 的其他属性
-    background: true,
-    hideOnSinglePage: false,
-    layout: 'total, sizes, prev, pager, next, jumper'
-  },
-  
-  // useRequest 的其他选项
-  immediate: true,
-  delay: 300
-});
+const { pageProps, loading, params, pageSize, currentPage, data, run } =
+  usePagination(fetchUsers, {
+    // 初始参数
+    params: searchParams,
+
+    // 分页配置
+    pagination: {
+      totalKey: 'totalCount', // 后端返回的总数字段
+      pageSizeKey: 'size', // 后端接收的每页大小字段
+      currentPageKey: 'pageNum', // 后端接收的页码字段
+      pageSize: 20, // 默认每页条数
+
+      // Element Plus Pagination 的其他属性
+      background: true,
+      hideOnSinglePage: false,
+      layout: 'total, sizes, prev, pager, next, jumper',
+    },
+
+    // useRequest 的其他选项
+    immediate: true,
+    delay: 300,
+  });
 
 // 表格列配置
 const columns = computed(() => [
@@ -211,20 +199,20 @@ const columns = computed(() => [
     prop: 'name',
     label: '姓名',
     width: '180',
-    compType: 'input'
+    compType: 'input',
   },
   {
     prop: 'age',
     label: '年龄',
     compType: 'input',
     compProps: {
-      type: 'number'
-    }
+      type: 'number',
+    },
   },
   {
     prop: 'email',
     label: '邮箱',
-    compType: 'input'
+    compType: 'input',
   },
   {
     prop: 'status',
@@ -233,15 +221,15 @@ const columns = computed(() => [
     compProps: {
       options: [
         { label: '启用', value: 'active' },
-        { label: '禁用', value: 'inactive' }
-      ]
-    }
+        { label: '禁用', value: 'inactive' },
+      ],
+    },
   },
   {
     label: '操作',
     prop: 'actions',
-    width: '140'
-  }
+    width: '140',
+  },
 ]);
 
 // API 请求函数
@@ -249,7 +237,7 @@ async function fetchUsers(params) {
   const response = await fetch('/api/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(params)
+    body: JSON.stringify(params),
   });
   return response.json();
 }
@@ -265,19 +253,19 @@ const handleReset = () => {
   searchParams.value = {
     name: '',
     status: '',
-    department: 'IT'
+    department: 'IT',
   };
   currentPage.value = 1;
   run();
 };
 
 // 编辑
-const handleEdit = (row) => {
+const handleEdit = row => {
   console.log('编辑', row);
 };
 
 // 删除
-const handleDelete = (row) => {
+const handleDelete = row => {
   console.log('删除', row);
 };
 </script>
@@ -285,28 +273,28 @@ const handleDelete = (row) => {
 
 ## API 参数
 
-| 参数 | 类型 | 默认值 | 说明 |
-|------|------|--------|------|
-| service | `TService` | - | 请求服务函数 |
-| options.pagination.totalKey | `string` | `'total'` | 后端返回数据中总条数的字段名 |
-| options.pagination.pageSizeKey | `string` | `'pageSize'` | 后端返回数据中每页大小的字段名 |
-| options.pagination.currentPageKey | `string` | `'currentPage'` | 后端返回数据中当前页码的字段名 |
-| options.pagination.pageSize | `number` | `10` | 默认每页显示的条数 |
-| options.params | `any` | `{}` | 额外的请求参数 |
-| options.immediate | `boolean` | `true` | 是否立即执行请求 |
-| options.delay | `number` | `0` | 防抖延迟时间（毫秒） |
+| 参数                              | 类型       | 默认值          | 说明                           |
+| --------------------------------- | ---------- | --------------- | ------------------------------ |
+| service                           | `TService` | -               | 请求服务函数                   |
+| options.pagination.totalKey       | `string`   | `'total'`       | 后端返回数据中总条数的字段名   |
+| options.pagination.pageSizeKey    | `string`   | `'pageSize'`    | 后端返回数据中每页大小的字段名 |
+| options.pagination.currentPageKey | `string`   | `'currentPage'` | 后端返回数据中当前页码的字段名 |
+| options.pagination.pageSize       | `number`   | `10`            | 默认每页显示的条数             |
+| options.params                    | `any`      | `{}`            | 额外的请求参数                 |
+| options.immediate                 | `boolean`  | `true`          | 是否立即执行请求               |
+| options.delay                     | `number`   | `0`             | 防抖延迟时间（毫秒）           |
 
 ## 返回值
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
-| pageProps | `Ref<TPageProps>` | Element Plus Pagination 组件的属性 |
-| loading | `Ref<boolean>` | 加载状态 |
-| params | `Ref<any>` | 请求参数（包含分页参数） |
-| pageSize | `Ref<number>` | 每页大小 |
-| currentPage | `Ref<number>` | 当前页码 |
-| data | `Ref<any>` | 响应数据 |
-| run | `() => void` | 手动执行请求 |
+| 属性        | 类型              | 说明                               |
+| ----------- | ----------------- | ---------------------------------- |
+| pageProps   | `Ref<TPageProps>` | Element Plus Pagination 组件的属性 |
+| loading     | `Ref<boolean>`    | 加载状态                           |
+| params      | `Ref<any>`        | 请求参数（包含分页参数）           |
+| pageSize    | `Ref<number>`     | 每页大小                           |
+| currentPage | `Ref<number>`     | 当前页码                           |
+| data        | `Ref<any>`        | 响应数据                           |
+| run         | `() => void`      | 手动执行请求                       |
 
 ## 全局配置
 
@@ -320,10 +308,10 @@ const pagination = {
   totalKey: 'totalCount',
   pageSizeKey: 'size',
   currentPageKey: 'pageNum',
-  pageSize: 20
+  pageSize: 20,
 };
 
 app.use(ElementPlusLego, { pagination });
 ```
 
-全局配置会被所有 `usePagination` 实例继承，但可以在具体使用时覆盖。
+全局配置会被所有 `usePagination` 实例继承（后续所有分页请求只需传入剩余参数即可），但可以在具体使用时覆盖。
