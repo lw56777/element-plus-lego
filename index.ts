@@ -8,10 +8,13 @@ export * from './packages/hooks';
 export * from './packages/utils';
 
 // 导出 Vue 插件安装函数
-import type { App, Component } from 'vue';
+import type { App, Component, Plugin } from 'vue';
 import * as components from './packages/components';
 import { __setGlobalComponentMap } from './packages/hooks/useDynamicComponent';
-import { type TGlobalPagination, __setGlobalPagination } from './packages/hooks/usePagination';
+import {
+  type TGlobalPagination,
+  __setGlobalPagination,
+} from './packages/hooks/usePagination';
 
 type TComponentMap = Record<string, Component>;
 
@@ -20,10 +23,7 @@ export interface ElementPlusLegoOptions {
   pagination?: TGlobalPagination;
 }
 
-const install = (
-  app: App,
-  options: ElementPlusLegoOptions | TComponentMap,
-) => {
+const install = (app: App, options: ElementPlusLegoOptions | TComponentMap) => {
   // 注册所有组件
   Object.values(components).forEach((component: any) => {
     if (component.install) {
@@ -33,10 +33,7 @@ const install = (
     }
   });
 
-  const {
-    componentMap,
-    pagination
-  } = options;
+  const { componentMap, pagination } = options;
 
   if (!componentMap) {
     __setGlobalComponentMap(options as TComponentMap);
@@ -49,4 +46,9 @@ const install = (
   }
 };
 
-export default { install };
+// 创建插件对象并指定类型
+const ElementPlusLego: Plugin<[ElementPlusLegoOptions | TComponentMap]> = {
+  install,
+};
+
+export default ElementPlusLego;
