@@ -44,9 +44,9 @@ export interface IUsePaginationReturn {
 
 export function usePagination(
   service: TService,
-  options: IOptions & { pagination?: TPageProps },
+  options?: IOptions & { pagination?: TPageProps },
 ): IUsePaginationReturn {
-  const { params: defaultParams, pagination } = options;
+  const { params: defaultParams, pagination } = options || {};
   const _defaultParams = toRef(defaultParams);
   const {
     totalKey = 'total',

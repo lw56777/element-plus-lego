@@ -22,7 +22,6 @@ class CParams implements IParams {
 export function useTable() {
   const { loading, params, data, run, pageProps, pageSize, currentPage } =
     usePagination(getTableData, {
-      initData: [],
       params: new CParams(),
     });
 
