@@ -4,6 +4,10 @@ import { ElButton } from 'element-plus';
 import { omit } from 'lodash-es';
 import { isFunction } from '@element-plus-lego/utils';
 
+defineOptions({
+  inheritAttrs: false,
+});
+
 const loading = ref(false);
 
 const attrs = useAttrs();
