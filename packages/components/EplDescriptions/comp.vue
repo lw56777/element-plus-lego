@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import type { PropType } from 'vue';
 import { useDynamicComponent } from '@element-plus-lego/hooks';
 import type { TCompType } from '@element-plus-lego/utils';
-import type { PropType } from 'vue';
 
 const props = defineProps({
   prop: {
@@ -9,7 +9,7 @@ const props = defineProps({
     default: '',
   },
   compType: {
-    type: [String, Function, Object] as PropType<TCompType>,
+    type: [String, Number, Function, Object] as PropType<TCompType>,
     default: '',
   },
   compProps: {
