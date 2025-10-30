@@ -23,6 +23,10 @@ const props = defineProps({
 
 const emits = defineEmits(['current-change', 'size-change']);
 
+defineSlots<{
+  [key: string]: (scope: { row: any; column: any; $index: number }) => any;
+}>();
+
 const tableData = defineModel<any[]>('modelValue');
 
 const currentPage = defineModel<number>('currentPage');
