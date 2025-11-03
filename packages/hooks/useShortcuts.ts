@@ -217,5 +217,17 @@ export function useShortcuts(dateRange?: ComputedRef<string[]>) {
 
   return {
     shortcuts,
+    getToday,
+    getYesterday,
+    getThisWeek,
+    getLastWeek,
+    getThisMonth,
+    getLastMonth,
+    getPast7Days,
+    getPast30Days,
+    getThisYear,
+    getLastYear,
+    getThisQuarter,
+    getLastQuarter,
   };
 }
