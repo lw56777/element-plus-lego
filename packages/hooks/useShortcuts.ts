@@ -17,10 +17,10 @@ const getToday = () => {
  * 获取昨天的开始和结束时间
  */
 const getYesterday = () => {
-  const start = _dateRange.value ? new Date(_dateRange.value[0]) : new Date();
+  const start = _dateRange ? new Date(_dateRange.value[0]) : new Date();
   start.setDate(start.getDate() - 1);
   start.setHours(0, 0, 0, 0);
-  const end = _dateRange.value ? new Date(_dateRange.value[1]) : new Date();
+  const end = _dateRange ? new Date(_dateRange.value[1]) : new Date();
   end.setDate(end.getDate() - 1);
   end.setHours(23, 59, 59, 999);
   return [start, end];
@@ -45,7 +45,7 @@ const getThisWeek = () => {
  * 获取上周的开始和结束时间
  */
 const getLastWeek = () => {
-  const now = _dateRange.value ? new Date(_dateRange.value[0]) : new Date();
+  const now = _dateRange ? new Date(_dateRange.value[0]) : new Date();
   const day = now.getDay();
   const diff = day === 0 ? 6 : day - 1;
   const start = new Date(now);
@@ -73,7 +73,7 @@ const getThisMonth = () => {
  * 获取上月第一天到上月最后一天
  */
 const getLastMonth = () => {
-  const now = _dateRange.value ? new Date(_dateRange.value[0]) : new Date();
+  const now = _dateRange ? new Date(_dateRange.value[0]) : new Date();
   const start = new Date(now.getFullYear(), now.getMonth() - 1, 1);
   start.setHours(0, 0, 0, 0);
   const end = new Date(now.getFullYear(), now.getMonth(), 0);
@@ -85,7 +85,7 @@ const getLastMonth = () => {
  * 获取过去7天
  */
 const getPast7Days = () => {
-  const end = _dateRange.value ? new Date(_dateRange.value[0]) : new Date();
+  const end = _dateRange ? new Date(_dateRange.value[0]) : new Date();
   end.setDate(end.getDate());
   end.setHours(23, 59, 59, 999);
   const start = new Date(end);
@@ -98,7 +98,7 @@ const getPast7Days = () => {
  * 获取过去30天
  */
 const getPast30Days = () => {
-  const end = _dateRange.value ? new Date(_dateRange.value[0]) : new Date();
+  const end = _dateRange ? new Date(_dateRange.value[0]) : new Date();
   end.setDate(end.getDate());
   end.setHours(23, 59, 59, 999);
   const start = new Date(end);
@@ -123,7 +123,7 @@ const getThisYear = () => {
  * 获取上一年第一天到上一年最后一天
  */
 const getLastYear = () => {
-  const now = _dateRange.value ? new Date(_dateRange.value[0]) : new Date();
+  const now = _dateRange ? new Date(_dateRange.value[0]) : new Date();
   const start = new Date(now.getFullYear() - 1, 0, 1);
   start.setHours(0, 0, 0, 0);
   const end = new Date(now.getFullYear() - 1, 11, 31);
@@ -148,7 +148,7 @@ const getThisQuarter = () => {
  * 获取上季度第一天到上季度最后一天
  */
 const getLastQuarter = () => {
-  const now = _dateRange.value ? new Date(_dateRange.value[0]) : new Date();
+  const now = _dateRange ? new Date(_dateRange.value[0]) : new Date();
   const quarter = Math.floor(now.getMonth() / 3);
   const lastQuarter = quarter === 0 ? 3 : quarter - 1;
   const year = quarter === 0 ? now.getFullYear() - 1 : now.getFullYear();
@@ -210,7 +210,7 @@ const shortcuts = [
   },
 ];
 
-export function useShortcuts(dateRange: ComputedRef<string[]>) {
+export function useShortcuts(dateRange?: ComputedRef<string[]>) {
   if (dateRange) {
     _dateRange = dateRange;
   }
