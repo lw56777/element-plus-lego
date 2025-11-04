@@ -231,7 +231,7 @@ interface IUseShortcutsOptions {
 }
 
 export function useShortcuts(
-  options: IUseShortcutsOptions | TDateRange | string,
+  options?: IUseShortcutsOptions | TDateRange | string,
 ) {
   if (isString(options)) {
     _format = options;
