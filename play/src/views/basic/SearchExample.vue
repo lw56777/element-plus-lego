@@ -1,11 +1,21 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { EplSearch } from '@element-plus-lego/components';
+import { useShortcuts } from '@element-plus-lego/hooks';
+
+const { shortcuts: dateShortcuts } = useShortcuts({
+  type: 'point',
+  dateValue: computed(() => params.value.date),
+});
+const { shortcuts: dateRangeShortcuts } = useShortcuts(
+  computed(() => params.value.dateRange),
+);
 
 const params = ref({
   keywords: '',
   region: '北京',
-  date: [],
+  date: '',
+  dateRange: [],
 });
 
 const items = computed(() => [
@@ -32,6 +42,21 @@ const items = computed(() => [
     label: '时间',
     prop: 'date',
     compType: 'date',
+    compProps: {
+      shortcuts: dateShortcuts,
+    },
+  },
+  {
+    label: '时间范围',
+    prop: 'dateRange',
+    compType: 'date',
+    compProps: {
+      shortcuts: dateRangeShortcuts,
+      type: 'daterange',
+      rangeSeparator: '至',
+      startPlaceholder: '开始日期',
+      endPlaceholder: '结束日期',
+    },
   },
 ]);
 
