@@ -16,7 +16,7 @@ export function useShortcuts(
     type = 'range',
     dateValue,
     format: _format = 'YYYY-MM-DD HH:mm:ss',
-  } = options as IUseShortcutsOptions;
+  } = (options as IUseShortcutsOptions) || {};
   const _dateValue = dateValue || (options as TDateValue);
   // 记录上次点击的时间段标识
   let lastClickedShortcut: string | null = null;
