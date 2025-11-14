@@ -70,7 +70,7 @@ export function useEplDialog(
             if (isString(click)) {
               await instance.value?.[click]?.();
             } else {
-              await click?.(instance.value);
+              await click?.(instance);
             }
 
             cb?.();
