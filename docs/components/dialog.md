@@ -111,6 +111,13 @@ const handleDialog = () => {
 
 ### useEplDialog
 
+:::tip 如何获取内容组件实例
+可以通过以下两种方式获取内容组件实例：
+
+1. **直接解构 `instance`**：`useEplDialog` 返回的 `instance` 是一个 `Ref<ComponentInstance>`，可以在调用 Hook 的作用域中读取 `instance.value`。
+2. **按钮回调参数**：`createConfirm` 在执行自定义 `click` 回调时，会把同一个 `instance` 作为参数传入（即 `click(instance)`），无需手动引入外部作用域即可访问。
+   :::
+
 #### 参数
 
 | 参数名         | 说明           | 类型          |
