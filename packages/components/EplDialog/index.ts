@@ -26,7 +26,7 @@ export function useEplDialog(
   }
 
   const modal = ref(true);
-  const instnce = ref();
+  const instance = ref();
   const cb = DialogProps.cb;
 
   const dialog = () =>
@@ -37,7 +37,7 @@ export function useEplDialog(
         modelValue: modal.value,
       },
       {
-        default: () => h(componet, { ref: instnce, ...props }),
+        default: () => h(componet, { ref: instance, ...props }),
         footer: DialogProps.footer,
       },
     );
@@ -68,9 +68,9 @@ export function useEplDialog(
             loading.value = true;
 
             if (isString(click)) {
-              await instnce.value?.[click]?.();
+              await instance.value?.[click]?.();
             } else {
-              await click?.(instnce.value);
+              await click?.(instance.value);
             }
 
             cb?.();
@@ -114,7 +114,7 @@ export function useEplDialog(
   };
 
   return {
-    instnce,
+    instance,
     close,
     createConfirm,
     createCancel,

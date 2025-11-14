@@ -20,7 +20,7 @@ const DialogContent = {
 };
 
 const handleDialog = () => {
-  const { instnce, createConfirm, createCancel } = useEplDialog(
+  const { instance, createConfirm, createCancel } = useEplDialog(
     DialogContent,
     {
       text: '传给内容组件的属性'
@@ -33,7 +33,7 @@ const handleDialog = () => {
           name: '获取实例',
           type: 'success',
           click: () => {
-            console.log('实例', instnce.value);
+            console.log('实例', instance.value);
           },
         }),
         createConfirm({
@@ -69,7 +69,7 @@ const DialogContent = {
 };
 
 const handleDialog = () => {
-  const { instnce, createConfirm, createCancel } = useEplDialog(
+  const { instance, createConfirm, createCancel } = useEplDialog(
     DialogContent,
     {
       text: '传给内容组件的属性'
@@ -82,7 +82,7 @@ const handleDialog = () => {
           name: '获取实例',
           type: 'success',
           click: () => {
-            console.log('实例', instnce.value);
+            console.log('实例', instance.value);
           },
         }),
         createConfirm({
@@ -123,7 +123,7 @@ const handleDialog = () => {
 
 | 属性名        | 说明           | 类型                         |
 | ------------- | -------------- | ---------------------------- |
-| instnce       | 内容组件实例   | \`Ref\<ComponentInstance\>\` |
+| instance      | 内容组件实例   | \`Ref\<ComponentInstance\>\` |
 | close         | 关闭对话框方法 | \`() => void\`               |
 | createConfirm | 创建确认按钮   | \`(props?) => VNode\`        |
 | createCancel  | 创建取消按钮   | \`(name?, props?) => VNode\` |
