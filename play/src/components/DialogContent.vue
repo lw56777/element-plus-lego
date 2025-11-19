@@ -99,6 +99,7 @@ const resetForm = (formEl: FormInstance | undefined) => {
 };
 
 defineExpose({
+  getFormData: () => ruleForm.value,
   validate: () => ruleFormRef.value?.validate(),
   reset: () => resetForm(ruleFormRef.value),
   confirm: () => submitForm(ruleFormRef.value),
@@ -151,7 +152,7 @@ defineExpose({
       </el-col>
     </el-form-item>
 
-    <el-form-item label="Instant delivery" prop="delivery">
+    <el-form-item label="Delivery" prop="delivery">
       <el-switch v-model="ruleForm.delivery" />
     </el-form-item>
 

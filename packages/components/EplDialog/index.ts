@@ -11,7 +11,8 @@ export type TDialogProps = Partial<DialogProps> & {
 
 type TFooterBtnProps = Partial<ButtonProps> & {
   name?: string; // 按钮名称
-  hidden?: boolean; // 是否执行完毕后关闭
+  hidden?: boolean; // 是否隐藏
+  autoClose?: boolean; // 是否执行完毕后自动关闭弹窗
   click?: string | ((...args: any[]) => void); // 事件名称/点击事件
 };
 
@@ -27,6 +28,7 @@ export function useEplDialog(
 
   const modal = ref(true);
   const instance = ref();
+  const disabled = ref(false);
   const cb = DialogProps.cb;
 
   const dialog = () =>
@@ -56,16 +58,18 @@ export function useEplDialog(
       setup() {
         const _props = {
           name: '确认',
-          hidden: true,
+          hidden: false,
+          autoClose: true,
           click: 'confirm',
           ...(isString(props) ? { name: props } : props),
         };
-        const { name, hidden, click } = _props;
+        const { name, hidden, autoClose, click } = _props;
         const loading = ref(false);
 
         const onClick = async () => {
           try {
             loading.value = true;
+            disabled.value = true;
 
             if (isString(click)) {
               await instance.value?.[click]?.();
@@ -75,20 +79,26 @@ export function useEplDialog(
 
             cb?.();
 
-            hidden && close();
+            autoClose && close();
           } catch (error) {
             throw error;
           } finally {
             loading.value = false;
+            const t = setTimeout(() => {
+              disabled.value = false;
+              clearTimeout(t);
+            }, 200);
           }
         };
 
         return () =>
+          !hidden &&
           h(
             ElButton,
             {
               loading: loading.value,
               type: 'primary',
+              disabled: disabled.value,
               onClick,
               ..._props,
             },
