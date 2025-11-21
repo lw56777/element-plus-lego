@@ -1,5 +1,5 @@
 import { h, type Component } from 'vue';
-import { isString, isFunction } from '@element-plus-lego/utils';
+import { isString, isFunction, isNumber } from '@element-plus-lego/utils';
 
 /**
  * 全局动态组件映射表
@@ -22,8 +22,8 @@ export function useDynamicComponent(initType?: string): {
   getComponent: (type: unknown, scope?: any) => any;
 } {
   const getComponent = (type: unknown, scope?: any) => {
-    // 如果 type 不是字符串，说明是组件对象或渲染函数
-    if (type && !isString(type)) {
+    // 如果 type 不是字符串或数字，说明是组件对象或渲染函数
+    if (type && !isString(type) && !isNumber(type)) {
       return isFunction(type) ? (type as Function)(scope) : type;
     }
 
