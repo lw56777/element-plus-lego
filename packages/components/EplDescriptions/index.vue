@@ -23,12 +23,12 @@ const items = computed(() => {
       label: isObject(item.label)
         ? item.label
         : {
-            compType: item.label,
+            compType: String(item.label),
           },
       value: isObject(item.value)
         ? item.value
         : {
-            compType: item.value,
+            compType: String(item.value),
           },
     });
 
