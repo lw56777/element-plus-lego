@@ -15,6 +15,9 @@ hero:
     - theme: alt
       text: 组件列表
       link: /components/button
+    - theme: alt
+      text: 完整示例
+      link: https://bricklayer-admin.vercel.app/#/login
 
 features:
   - title: 📦 开箱即用
