@@ -103,11 +103,13 @@ const DialogContent = {
   setup(props, { expose }) {
     const delivery = ref(false);
     const getFormData = () => ({ delivery: delivery.value });
-    const reset = () => { delivery.value = false; };
+    const reset = () => {
+      delivery.value = false;
+    };
     const confirm = async () => {
       await new Promise(resolve => setTimeout(resolve, 1000));
       ElMessage.success('提交成功');
-    }
+    };
 
     expose({
       getFormData,
@@ -115,17 +117,20 @@ const DialogContent = {
       confirm,
     });
 
-    return () => h('div', [
-      h('p', '对话框内容'),
-      h('div', { style: 'display: flex; align-items: center; gap: 8px;' }, [
-        h('span', 'Delivery'),
-        h(ElSwitch, {
-          modelValue: delivery.value,
-          'onUpdate:modelValue': (val) => { delivery.value = val; }
-        })
-      ])
-    ]);
-  }
+    return () =>
+      h('div', [
+        h('p', '对话框内容'),
+        h('div', { style: 'display: flex; align-items: center; gap: 8px;' }, [
+          h('span', 'Delivery'),
+          h(ElSwitch, {
+            modelValue: delivery.value,
+            'onUpdate:modelValue': val => {
+              delivery.value = val;
+            },
+          }),
+        ]),
+      ]);
+  },
 };
 
 const handleDialog = () => {
@@ -174,7 +179,7 @@ const handleDialog = () => {
     },
   );
 };
-<\/script>
+</script>
 
 <template>
   <el-button @click="handleDialog">弹窗</el-button>

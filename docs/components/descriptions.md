@@ -108,7 +108,10 @@ const demo3Items = computed(() => [
 ```vue
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { EplDescriptions, type TDescriptionsItem } from '@element-plus-lego/components';
+import {
+  EplDescriptions,
+  type TDescriptionsItem,
+} from '@element-plus-lego/components';
 
 const descriptionsData = ref({
   name: '远方os',
@@ -117,10 +120,14 @@ const descriptionsData = ref({
 const items = computed(() => [
   { label: '姓名', value: descriptionsData.value.name },
 ]);
-<\/script>
+</script>
 
 <template>
-  <EplDescriptions v-model="descriptionsData" :items="items" border></EplDescriptions>
+  <EplDescriptions
+    v-model="descriptionsData"
+    :items="items"
+    border
+  ></EplDescriptions>
 </template>
 ```
 
@@ -140,7 +147,10 @@ const items = computed(() => [
 <script setup lang="ts">
 import { h, ref, computed } from 'vue';
 import { ElTag, ElCheckboxGroup } from 'element-plus';
-import { EplDescriptions, type TDescriptionsItem } from '@element-plus-lego/components';
+import {
+  EplDescriptions,
+  type TDescriptionsItem,
+} from '@element-plus-lego/components';
 
 const descriptionsData = ref({
   genderType: 1,
@@ -204,10 +214,14 @@ const items = computed(() => [
     hidden: descriptionsData.value.gender === 1,
   },
 ]);
-<\/script>
+</script>
 
 <template>
-  <EplDescriptions v-model="descriptionsData" :items="items" border></EplDescriptions>
+  <EplDescriptions
+    v-model="descriptionsData"
+    :items="items"
+    border
+  ></EplDescriptions>
 </template>
 ```
 
@@ -238,7 +252,10 @@ const items = computed(() => [
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { ElTag } from 'element-plus';
-import { EplDescriptions, type TDescriptionsItem } from '@element-plus-lego/components';
+import {
+  EplDescriptions,
+  type TDescriptionsItem,
+} from '@element-plus-lego/components';
 
 const descriptionsData = ref({
   course: 'Vue源码课',
@@ -251,7 +268,7 @@ const items = computed(() => [
     value: 'price',
   },
 ]);
-<\/script>
+</script>
 
 <template>
   <EplDescriptions v-model="descriptionsData" :items="items" border>

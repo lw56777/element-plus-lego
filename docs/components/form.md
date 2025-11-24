@@ -183,7 +183,7 @@ const rules: FormRules = {
 };
 
 const formRef = ref();
-<\/script>
+</script>
 
 <template>
   <EplForm
@@ -316,15 +316,10 @@ const rules: FormRules = {
 };
 
 const formRef = ref();
-<\/script>
+</script>
 
 <template>
-  <EplForm
-    v-model="formData"
-    :rules="rules"
-    :items="formItems"
-    ref="formRef"
-  >
+  <EplForm v-model="formData" :rules="rules" :items="formItems" ref="formRef">
     <template #desc>
       <el-input v-model="formData.desc" type="textarea" />
     </template>
@@ -384,12 +379,16 @@ const rules: FormRules = {
   ],
 };
 
-const { formComp: FormComp, validate, resetFields } = useEplForm({
+const {
+  formComp: FormComp,
+  validate,
+  resetFields,
+} = useEplForm({
   modelValue: formData,
   rules,
   items: formItems,
 });
-<\/script>
+</script>
 
 <template>
   <FormComp />

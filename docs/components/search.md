@@ -89,17 +89,17 @@ const items = computed(() => [
 ]);
 
 const onSearch = () => {
-  ElMessage.primary('搜索')
+  ElMessage.primary('搜索');
 };
 
 const onReset = () => {
-  ElMessage('重置')
+  ElMessage('重置');
 };
 
 const onRefresh = () => {
-  ElMessage.success('刷新')
+  ElMessage.success('刷新');
 };
-<\/script>
+</script>
 
 <template>
   <EplSearch
@@ -170,17 +170,17 @@ const emits = computed(() => [
 ]);
 
 const onSearch = () => {
-  ElMessage.primary('搜索')
+  ElMessage.primary('搜索');
 };
 
 const onReset = () => {
-  ElMessage('重置')
+  ElMessage('重置');
 };
 
 const onRefresh = () => {
-  ElMessage.success('刷新')
+  ElMessage.success('刷新');
 };
-<\/script>
+</script>
 
 <template>
   <EplSearch
@@ -194,7 +194,9 @@ const onRefresh = () => {
       <el-input v-model="params.keywords" placeholder="回车触发搜索" />
     </template>
     <template #submit>
-      <el-button type="primary" nativeType="submit" @click="onSearch">提交插槽</el-button>
+      <el-button type="primary" nativeType="submit" @click="onSearch">
+        提交插槽
+      </el-button>
     </template>
   </EplSearch>
 </template>

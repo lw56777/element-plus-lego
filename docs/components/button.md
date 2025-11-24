@@ -27,7 +27,7 @@ const onClick = async () => {
 const onClick = async () => {
   return new Promise(resolve => setTimeout(resolve, 1000));
 };
-<\/script>
+</script>
 
 <template>
   <EplButton @click="onClick">Default</EplButton>

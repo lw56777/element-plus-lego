@@ -255,7 +255,7 @@ const columns: ComputedRef<TTableColumn[]> = computed(() => [
       {
         prop: 'course',
         label: '课程名称',
-        width: 100
+        width: 100,
       },
       {
         label: '内容介绍',
@@ -279,7 +279,7 @@ const columns: ComputedRef<TTableColumn[]> = computed(() => [
     label: '操作',
   },
 ]);
-<\/script>
+</script>
 
 <template>
   <EplTable v-model="tableData" :columns="columns" border>
