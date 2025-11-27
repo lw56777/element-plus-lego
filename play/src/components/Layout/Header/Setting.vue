@@ -8,6 +8,18 @@ const openDrawer = () => {
   drawer.value = true;
 };
 
+const language = useStorage('language', 'zh-cn');
+const languageOptions = [
+  {
+    label: '简体中文',
+    value: 'zh-cn',
+  },
+  {
+    label: 'English',
+    value: 'en',
+  },
+];
+
 const bgEffectValue = useStorage('bgEffectValue', 1);
 const bgEffectOptions = [
   {
@@ -35,6 +47,18 @@ const bgEffectOptions = [
       :append-to-body="true"
     >
       <div class="setting-item">
+        <el-divider border-style="dashed">语言</el-divider>
+        <div class="handle">
+          <el-select v-model="language">
+            <el-option
+              v-for="item of languageOptions"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value"
+            />
+          </el-select>
+        </div>
+
         <el-divider border-style="dashed">背景效果</el-divider>
         <div class="handle">
           <el-select v-model="bgEffectValue">

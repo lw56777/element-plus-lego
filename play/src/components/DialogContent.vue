@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
-import { ElMessage } from 'element-plus';
+import { ElMessage, ElPagination } from 'element-plus';
 import type { FormInstance, FormRules } from 'element-plus';
 
 const props = defineProps({
@@ -183,5 +183,7 @@ defineExpose({
     <el-form-item label="Activity form" prop="desc">
       <el-input v-model="ruleForm.desc" type="textarea" />
     </el-form-item>
+
+    <ElPagination :total="100" layout="sizes, prev, pager, next, jumper" />
   </el-form>
 </template>

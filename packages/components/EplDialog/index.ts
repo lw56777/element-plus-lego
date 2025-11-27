@@ -1,7 +1,9 @@
-import { createApp, h, ref } from 'vue';
+import { createApp, h, ref, getCurrentInstance } from 'vue';
 import type { VNode, Component } from 'vue';
-import { ElDialog, ElButton } from 'element-plus';
+import { ElDialog, ElButton, ElConfigProvider } from 'element-plus';
 import type { DialogProps, ButtonProps } from 'element-plus';
+import zhCn from 'element-plus/es/locale/lang/zh-cn';
+import en from 'element-plus/es/locale/lang/en';
 import { isString } from '@element-plus-lego/utils';
 
 export type TDialogProps = Partial<DialogProps> & {
@@ -33,14 +35,24 @@ export function useEplDialog(
 
   const dialog = () =>
     h(
-      ElDialog,
+      ElConfigProvider,
       {
-        ...DialogProps,
-        modelValue: modal.value,
+        locale:
+          getCurrentInstance()?.appContext?.config.globalProperties?.locale,
       },
       {
-        default: () => h(componet, { ref: instance, ...props }),
-        footer: DialogProps.footer,
+        default: () =>
+          h(
+            ElDialog,
+            {
+              ...DialogProps,
+              modelValue: modal.value,
+            },
+            {
+              default: () => h(componet, { ref: instance, ...props }),
+              footer: DialogProps.footer,
+            },
+          ),
       },
     );
 
