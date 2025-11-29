@@ -2,8 +2,6 @@ import { createApp, h, ref, getCurrentInstance } from 'vue';
 import type { VNode, Component } from 'vue';
 import { ElDialog, ElButton, ElConfigProvider } from 'element-plus';
 import type { DialogProps, ButtonProps } from 'element-plus';
-import zhCn from 'element-plus/es/locale/lang/zh-cn';
-import en from 'element-plus/es/locale/lang/en';
 import { isString } from '@element-plus-lego/utils';
 
 export type TDialogProps = Partial<DialogProps> & {

@@ -63,7 +63,6 @@ const getAttrs = (item: any): TEmitsAttrs | false => {
 
     case 'onReset':
       return {
-        type: 'info',
         icon: RefreshLeft,
         plain: true,
         name: '重置',
