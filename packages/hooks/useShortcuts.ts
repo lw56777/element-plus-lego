@@ -98,7 +98,9 @@ export function useShortcuts(
     const start = new Date(now);
     start.setDate(now.getDate() - diff);
     start.setHours(0, 0, 0, 0);
-    const end = new Date();
+    const end = new Date(now);
+    // 结束时间设置为本周日
+    end.setDate(now.getDate() - diff + 6);
     end.setHours(23, 59, 59, 999);
     return formatDates([start, end], format);
   };
@@ -120,7 +122,8 @@ export function useShortcuts(
     const now = new Date();
     const start = new Date(now.getFullYear(), now.getMonth(), 1);
     start.setHours(0, 0, 0, 0);
-    const end = new Date();
+    // 结束时间设置为本月最后一天
+    const end = new Date(now.getFullYear(), now.getMonth() + 1, 0);
     end.setHours(23, 59, 59, 999);
     return formatDates([start, end], format);
   };
@@ -156,7 +159,8 @@ export function useShortcuts(
     const now = new Date();
     const start = new Date(now.getFullYear(), 0, 1);
     start.setHours(0, 0, 0, 0);
-    const end = new Date();
+    // 结束时间设置为本年12月31日
+    const end = new Date(now.getFullYear(), 11, 31);
     end.setHours(23, 59, 59, 999);
     return formatDates([start, end], format);
   };
@@ -175,7 +179,8 @@ export function useShortcuts(
     const quarter = Math.floor(now.getMonth() / 3);
     const start = new Date(now.getFullYear(), quarter * 3, 1);
     start.setHours(0, 0, 0, 0);
-    const end = new Date();
+    // 结束时间设置为本季度最后一天
+    const end = new Date(now.getFullYear(), quarter * 3 + 3, 0);
     end.setHours(23, 59, 59, 999);
     return formatDates([start, end], format);
   };
