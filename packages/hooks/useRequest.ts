@@ -1,5 +1,5 @@
 import { ref, toRef } from 'vue';
-import { debounce } from 'lodash-es';
+import { debounce, cloneDeep } from 'lodash-es';
 import { isArray } from '@element-plus-lego/utils';
 
 export type TService = (...args: any[]) => Promise<any> | Promise<any>[];
@@ -64,11 +64,20 @@ export function useRequest(service: TService, options?: IOptions) {
 
   immediate && run();
 
+  // 保存初始 params 状态
+  const initialParams = cloneDeep(_params || {});
+
+  const reset = () => {
+    params.value = cloneDeep(initialParams);
+    run();
+  };
+
   return {
     loading,
     params,
     data,
     error,
     run,
+    reset,
   };
 }

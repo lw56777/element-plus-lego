@@ -1,6 +1,6 @@
 import { computed, ref, toRef, watch, type Ref } from 'vue';
 import type { PaginationProps } from 'element-plus';
-import { omit } from 'lodash-es';
+import { cloneDeep, omit } from 'lodash-es';
 import { useRequest, type TService, type IOptions } from './useRequest';
 
 export type TGlobalPagination = {
@@ -40,6 +40,7 @@ export interface IUsePaginationReturn {
   currentPage: Ref<number>;
   data: Ref<any>;
   run: () => void;
+  reset: () => void;
 }
 
 export function usePagination(
@@ -59,7 +60,7 @@ export function usePagination(
     ...pagination,
   };
 
-  const { loading, params, data, run } = useRequest(service, {
+  const { loading, params, data, run, reset } = useRequest(service, {
     ...omit(options, ['params', 'pagination']),
     params: {
       ..._defaultParams.value,
@@ -91,6 +92,12 @@ export function usePagination(
     },
   );
 
+  const _reset = () => {
+    _pageSize.value = pageSize;
+    _currentPage.value = currentPage;
+    reset();
+  };
+
   return {
     pageProps,
     loading,
@@ -99,5 +106,6 @@ export function usePagination(
     currentPage: _currentPage,
     data,
     run,
+    reset: _reset,
   };
 }
