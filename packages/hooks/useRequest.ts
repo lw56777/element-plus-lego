@@ -69,7 +69,6 @@ export function useRequest(service: TService, options?: IOptions) {
 
   const reset = () => {
     params.value = cloneDeep(initialParams);
-    run();
   };
 
   return {
