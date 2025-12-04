@@ -77,6 +77,7 @@ const onRefresh = () => {
   <EplSearch
     v-model="params"
     :items="items"
+    :showSearch="false"
     @reset="onReset"
     @refresh="onRefresh"
     @search="onSearch"

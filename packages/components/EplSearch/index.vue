@@ -1,13 +1,8 @@
 <script setup lang="ts">
 import { getCurrentInstance, computed, type PropType } from 'vue';
-import {
-  ElButton,
-  ElForm,
-  ElFormItem,
-  ElSpace,
-  type FormRules,
-} from 'element-plus';
+import { ElForm, ElFormItem, ElSpace, type FormRules } from 'element-plus';
 import { Search, Refresh, RefreshLeft } from '@element-plus/icons-vue';
+import { EplButton } from '../EplButton';
 import { isFunction } from '@element-plus-lego/utils';
 import { useDynamicComponent } from '@element-plus-lego/hooks';
 import type { TFormItem } from '../EplForm';
@@ -25,6 +20,10 @@ const props = defineProps({
   emits: {
     type: Array as PropType<TEmitsAttrs[]>,
     default: () => [],
+  },
+  showSearch: {
+    type: Boolean,
+    default: true,
   },
 });
 
@@ -48,6 +47,7 @@ const getAttrs = (item: any): TEmitsAttrs | false => {
   const key = Object.keys(item)[0];
   const value = item[key];
   const attrs = {
+    show: true,
     onClick: value,
   };
 
@@ -59,6 +59,7 @@ const getAttrs = (item: any): TEmitsAttrs | false => {
         name: '搜索',
         nativeType: 'submit',
         ...attrs,
+        show: props.showSearch,
       };
 
     case 'onReset':
@@ -140,9 +141,9 @@ defineExpose({} as TProps);
         </template>
 
         <template v-for="(item, index) of defaultEmits" :key="index">
-          <el-button v-if="item" v-bind="item">
+          <EplButton v-if="item" v-show="item.show" v-bind="item">
             {{ item.name }}
-          </el-button>
+          </EplButton>
         </template>
       </el-space>
     </div>

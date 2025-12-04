@@ -10,6 +10,7 @@ import {
   type FormRules,
 } from 'element-plus';
 import { useDynamicComponent } from '@element-plus-lego/hooks';
+import { get, set } from 'lodash-es';
 import type { TFormItem } from '.';
 
 const props = defineProps({
@@ -50,7 +51,8 @@ defineExpose({
           <slot :name="item.prop">
             <component
               :is="getComponent(item.compType)"
-              v-model="formData[item.prop as keyof typeof formData]"
+              :model-value="get(formData, item.prop)"
+              @update:model-value="value => set(formData, item.prop, value)"
               v-bind="(item.compProps as Record<string, any>) || {}"
             />
           </slot>

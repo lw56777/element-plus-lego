@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, useTemplateRef, type ComputedRef } from 'vue';
+import { ref, computed, useTemplateRef, watch, type ComputedRef } from 'vue';
 import type { FormRules } from 'element-plus';
 import {
   EplForm,
@@ -18,6 +18,17 @@ const formData = ref({
   type: [],
   resource: '',
   desc: '',
+  locationList: [
+    {
+      value: '1',
+    },
+    {
+      value: '2',
+    },
+    {
+      value: '3',
+    },
+  ],
 });
 
 const rules: FormRules = {
@@ -120,6 +131,18 @@ const formItems: ComputedRef<TFormItem[]> = computed(() => [
     prop: 'desc',
     placeholder: '请输入描述',
   },
+  ...Array.from({ length: formData.value.locationList.length }, (_, index) => ({
+    label: `位置${index + 1}`,
+    prop: `locationList[${index}].value`,
+    rules: [
+      {
+        required: true,
+        message: `请输入位置${index + 1}`,
+        trigger: 'blur',
+      },
+    ],
+    placeholder: '请输入位置',
+  })),
 ]);
 
 const formRef = useTemplateRef('formRef');

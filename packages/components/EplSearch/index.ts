@@ -7,7 +7,8 @@ export type TProps = ComponentInstance<typeof ElCard>;
 export type TEmitsAttrs = Partial<ComponentInstance<typeof ElButton>> & {
   name?: TCompType; // 默认插槽
   prop?: string; // 绑定params的字段key/自定义插槽名称
-  hidden?: boolean;
+  hidden?: boolean; // 是否隐藏(v-if)
+  show?: boolean; // 是否显示(v-show)
   nativeType?: string;
   compType?: TCompType; // 动态组件类型
   onClick?: Function;
