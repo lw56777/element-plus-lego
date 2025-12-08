@@ -32,7 +32,8 @@ export const getTableData = (params: any) => {
             { length: params.pageSize || tableData.length },
             () => tableData[Math.floor(Math.random() * tableData.length)],
           ),
-          total: params.pageSize * Math.floor(Math.random() * 100),
+          total:
+            params.pageSize * Math.floor(Math.random() * 10) || params.pageSize,
         },
         message: 'success',
       });

@@ -1,6 +1,6 @@
 import { computed, ref, toRef, watch, type Ref } from 'vue';
 import type { PaginationProps } from 'element-plus';
-import { cloneDeep, omit } from 'lodash-es';
+import { omit } from 'lodash-es';
 import { useRequest, type TService, type IOptions } from './useRequest';
 
 export type TGlobalPagination = {
@@ -69,12 +69,14 @@ export function usePagination(
     },
   });
 
-  const pageProps = ref({
-    background: true,
-    hideOnSinglePage: true,
-    layout: 'total, sizes, prev, pager, next',
-    ...pagination,
-    [totalKey]: computed(() => data.value?.[totalKey] || 0),
+  const pageProps = computed(() => {
+    return {
+      background: true,
+      layout: 'total, sizes, prev, pager, next',
+      hideOnSinglePage: data.value?.[totalKey] <= pageSize,
+      ...pagination,
+      [totalKey]: data.value?.[totalKey] || 0,
+    };
   });
 
   const _pageSize = ref(params.value[pageSizeKey]);

@@ -31,6 +31,9 @@ export function useTable() {
     currentPage,
   } = usePagination(getTableData, {
     params: new CParams(),
+    pagination: {
+      hideOnSinglePage: false,
+    },
   });
 
   const search = () => {
