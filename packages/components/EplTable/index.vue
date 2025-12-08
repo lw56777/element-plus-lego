@@ -59,6 +59,7 @@ defineExpose({} as ComponentInstance<typeof ElTable>);
         v-model:currentPage="currentPage"
         v-model:page-size="pageSize"
         v-bind="pageProps"
+        class="mt-4"
       />
     </div>
   </div>
@@ -69,7 +70,6 @@ defineExpose({} as ComponentInstance<typeof ElTable>);
   &__pagination {
     display: flex;
     justify-content: flex-end;
-    margin-top: 2.5rem;
   }
 }
 </style>
