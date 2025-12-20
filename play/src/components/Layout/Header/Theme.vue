@@ -38,6 +38,7 @@ const themeToggle = (e: MouseEvent) => {
           ? '::view-transition-old(root)'
           : '::view-transition-new(root)',
         duration: 500,
+        fill: 'forwards',
       },
     );
   });
@@ -71,10 +72,6 @@ const themeToggle = (e: MouseEvent) => {
     .el-switch__core .el-switch__action {
       background-color: var(--switch-action-color);
     }
-  }
-
-  ::view-transition-new(root) {
-    background-color: red;
   }
 }
 </style>
