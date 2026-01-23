@@ -1,7 +1,11 @@
 import { computed, ref, toRef, watch, type Ref } from 'vue';
 import type { PaginationProps } from 'element-plus';
 import { omit } from 'lodash-es';
-import { useRequest, type TService, type IOptions } from './useRequest';
+import {
+  useRequest,
+  type TServiceFunction,
+  type IOptionsSingle,
+} from './useRequest';
 
 export type TGlobalPagination = {
   totalKey?: string;
@@ -44,8 +48,8 @@ export interface IUsePaginationReturn {
 }
 
 export function usePagination(
-  service: TService,
-  options?: IOptions & { pagination?: TPageProps },
+  service: TServiceFunction,
+  options?: IOptionsSingle & { pagination?: TPageProps },
 ): IUsePaginationReturn {
   const { params: defaultParams, pagination } = options || {};
   const _defaultParams = toRef(defaultParams);
