@@ -54,14 +54,14 @@ export function useSignIn() {
   const router = useRouter();
 
   const signInForm = ref(new CSignInForm());
-  const { formComp: SignInFormComp, validate } = useEplForm({
+  const [SignInFormComp, formRef] = useEplForm({
     modelValue: signInForm,
     rules: signInRules,
     items: signInFormItems,
   });
 
   const onSignIn = () => {
-    validate()?.then(() => {
+    formRef.value?.validate()?.then(() => {
       ElMessage.success('登录成功');
       router.push({
         name: 'Home',
@@ -98,13 +98,15 @@ export function useSignUp() {
     },
   ];
 
-  const { formComp: SignUpFormComp, validate: validateSignUpForm } = useEplForm(
-    {
-      modelValue: signUpForm,
-      rules: signUpRules,
-      items: signUpFormItems,
-    },
-  );
+  const { Component: SignUpFormComp, instance: formRef } = useEplForm({
+    modelValue: signUpForm,
+    rules: signUpRules,
+    items: signUpFormItems,
+  });
+
+  const validateSignUpForm = async () => {
+    await formRef.value?.validate();
+  };
 
   return {
     SignUpFormComp,

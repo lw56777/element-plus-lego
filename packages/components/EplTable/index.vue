@@ -1,10 +1,6 @@
 <script setup lang="ts">
-import {
-  computed,
-  getCurrentInstance,
-  type ComponentInstance,
-  type PropType,
-} from 'vue';
+import { computed, getCurrentInstance } from 'vue';
+import type { ComponentInstance, PropType } from 'vue';
 import { ElTable, ElPagination } from 'element-plus';
 import type { TPageProps } from '@element-plus-lego/hooks';
 import { omit } from 'lodash-es';

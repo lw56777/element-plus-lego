@@ -1,7 +1,7 @@
-import { h, reactive, ref, type Component } from 'vue';
 import type { ComputedRef } from 'vue';
 import type { FormRules, FormItemProps } from 'element-plus';
 import type { Compulsory, TCompType } from '@element-plus-lego/utils';
+import { useComponent } from '@element-plus-lego/hooks';
 import EplForm from './index.vue';
 
 export type TFormItem = Compulsory<Partial<FormItemProps>, 'label'> & {
@@ -11,23 +11,13 @@ export type TFormItem = Compulsory<Partial<FormItemProps>, 'label'> & {
   compProps?: unknown; // 动态组件的属性
 };
 
-type FuncComponentProps = {
+type TComponentProps = {
   modelValue: any;
   rules: FormRules;
   items: TFormItem[] | ComputedRef<TFormItem[]>;
 };
 
-export const useEplForm = (props: FuncComponentProps) => {
-  const formRef = ref();
-  const Component: Component = (_: any, { slots }: any) => {
-    return h(EplForm, { ...reactive(props), ref: formRef }, slots);
-  };
-
-  return {
-    formComp: Component,
-    validate: () => formRef.value?.validate(),
-    resetFields: () => formRef.value?.resetFields(),
-  };
-};
+export const useEplForm = (props: TComponentProps) =>
+  useComponent(EplForm)(props);
 
 export { default as EplForm } from './index.vue';

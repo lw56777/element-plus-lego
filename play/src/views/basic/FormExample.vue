@@ -147,15 +147,28 @@ const formItems: ComputedRef<TFormItem[]> = computed(() => [
 
 const formRef = useTemplateRef('formRef');
 
-const {
-  formComp: EplFormComp,
-  validate: validateBaForm,
-  resetFields: resetFieldsBaForm,
-} = useEplForm({
+const validate = () => {
+  formRef.value?.validate();
+};
+
+const resetFields = () => {
+  formRef.value?.resetFields();
+};
+
+const [EplFormComp, formRef2] = useEplForm({
   modelValue: formData,
   rules,
   items: formItems,
 });
+console.log('formRef2', formRef2);
+
+const validate2 = () => {
+  formRef2.value?.validate();
+};
+
+const resetFields2 = () => {
+  formRef2.value?.resetFields();
+};
 </script>
 
 <template>
@@ -167,8 +180,8 @@ const {
     </template>
   </EplForm>
 
-  <el-button type="primary" @click="formRef?.validate">校验</el-button>
-  <el-button @click="formRef?.resetFields">重置</el-button>
+  <el-button type="primary" @click="validate">校验</el-button>
+  <el-button @click="resetFields">重置</el-button>
 
   <el-divider>函数式</el-divider>
 
@@ -178,6 +191,6 @@ const {
     </template>
   </EplFormComp>
 
-  <el-button type="primary" @click="validateBaForm">校验</el-button>
-  <el-button @click="resetFieldsBaForm">重置</el-button>
+  <el-button type="primary" @click="validate2">校验</el-button>
+  <el-button @click="resetFields2">重置</el-button>
 </template>

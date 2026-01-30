@@ -1,14 +1,7 @@
 <script setup lang="ts">
-import { useTemplateRef, computed } from 'vue';
-import type { PropType } from 'vue';
-import {
-  ElForm,
-  ElFormItem,
-  ElRow,
-  ElCol,
-  type FormInstance,
-  type FormRules,
-} from 'element-plus';
+import { computed, getCurrentInstance } from 'vue';
+import type { ComponentInstance, PropType } from 'vue';
+import { ElForm, ElFormItem, ElRow, ElCol, type FormRules } from 'element-plus';
 import { useDynamicComponent } from '@element-plus-lego/hooks';
 import { get, set } from 'lodash-es';
 import type { TFormItem } from '.';
@@ -28,23 +21,24 @@ const props = defineProps({
   },
 });
 
+const { getComponent } = useDynamicComponent('input');
+
 const items = computed(() => {
   return props.items.filter(item => !item.hidden);
 });
 
 const formData = defineModel<any>('modelValue');
-const formInstance = useTemplateRef<FormInstance>('formRef');
+const formInstance = getCurrentInstance();
 
-const { getComponent } = useDynamicComponent('input');
+const formRef = exposed => {
+  formInstance.exposed = exposed;
+};
 
-defineExpose({
-  validate: () => formInstance.value?.validate(),
-  resetFields: () => formInstance.value?.resetFields(),
-});
+defineExpose({} as ComponentInstance<typeof ElForm>);
 </script>
 
 <template>
-  <el-form :model="formData" :rules="rules" ref="formRef">
+  <el-form :model="formData" :rules="rules" :ref="formRef">
     <el-row :gutter="gutter">
       <el-col v-for="item in items" :key="item.label" v-bind="item">
         <el-form-item v-bind="item">
