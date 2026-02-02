@@ -43,8 +43,11 @@ export function useDynamicComponent(initType?: string): {
     );
   };
 
-  return {
-    componentMap: globalComponentMap,
-    getComponent,
-  };
+  return Object.assign(
+    {
+      componentMap: globalComponentMap,
+      getComponent,
+    },
+    [globalComponentMap, getComponent],
+  );
 }

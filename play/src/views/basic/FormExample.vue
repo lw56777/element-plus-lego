@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { ref, computed, useTemplateRef, watch, type ComputedRef } from 'vue';
+import { ref, computed, useTemplateRef, h, type ComputedRef } from 'vue';
+import { ElTooltip, ElIcon, ElAlert } from 'element-plus';
 import type { FormRules } from 'element-plus';
+import { WarningFilled } from '@element-plus/icons-vue';
 import {
   EplForm,
   useEplForm,
@@ -95,10 +97,21 @@ const rules: FormRules = {
 
 const formItems: ComputedRef<TFormItem[]> = computed(() => [
   {
-    label: '姓名',
+    label: {
+      compType: () =>
+        h(
+          ElTooltip,
+          {
+            content: '这是自定义label',
+            placement: 'top',
+          },
+          () => h('span', ['姓名', h(ElIcon, () => h(WarningFilled))]),
+        ),
+    },
     prop: 'name',
     placeholder: '请输入姓名',
     span: 12,
+    error: 'nameError',
   },
   {
     label: '地区',
@@ -130,6 +143,7 @@ const formItems: ComputedRef<TFormItem[]> = computed(() => [
     label: '描述',
     prop: 'desc',
     placeholder: '请输入描述',
+    error: '描述错误',
   },
   ...Array.from({ length: formData.value.locationList.length }, (_, index) => ({
     label: `位置${index + 1}`,
@@ -160,7 +174,6 @@ const [EplFormComp, formRef2] = useEplForm({
   rules,
   items: formItems,
 });
-console.log('formRef2', formRef2);
 
 const validate2 = () => {
   formRef2.value?.validate();
@@ -177,6 +190,10 @@ const resetFields2 = () => {
   <EplForm v-model="formData" :rules="rules" :items="formItems" ref="formRef">
     <template #desc>
       <el-input v-model="formData.desc" type="textarea" />
+    </template>
+
+    <template #nameError>
+      <el-alert type="error">姓名错误</el-alert>
     </template>
   </EplForm>
 
