@@ -2,9 +2,10 @@
 import { getCurrentInstance, computed, type PropType } from 'vue';
 import { ElForm, ElFormItem, ElSpace, type FormRules } from 'element-plus';
 import { Search, Refresh, RefreshLeft } from '@element-plus/icons-vue';
-import { EplButton } from '../EplButton';
 import { isFunction } from '@element-plus-lego/utils';
 import { useDynamicComponent } from '@element-plus-lego/hooks';
+import { isObject, omit } from 'lodash-es';
+import { EplButton } from '../EplButton';
 import type { TFormItem } from '../EplForm';
 import type { TProps, TEmits, TEmitsAttrs } from '.';
 
@@ -29,6 +30,7 @@ const props = defineProps({
 
 const { getComponent: getComponentI } = useDynamicComponent('input');
 const { getComponent: getComponentO } = useDynamicComponent('button');
+const { getComponent } = useDynamicComponent();
 
 const params = defineModel<any>('modelValue');
 
@@ -109,7 +111,17 @@ defineExpose({} as TProps);
     <div class="epl-search__conditions">
       <template v-if="items.length">
         <template v-for="item of items" :key="item.prop">
-          <el-form-item v-bind="item">
+          <el-form-item v-bind="omit(item, ['label', 'error'])">
+            <template v-if="item.label" #label>
+              <component
+                v-if="isObject(item.label)"
+                :is="getComponent(item.label?.compType)"
+                v-bind="(item.label?.compProps as Record<string, any>) || {}"
+              />
+
+              <slot v-else :name="item.label">{{ item.label }}</slot>
+            </template>
+
             <slot :name="item.prop">
               <component
                 :is="getComponentI(item.compType)"
@@ -117,6 +129,16 @@ defineExpose({} as TProps);
                 v-bind="(item.compProps as Record<string, any>) || {}"
               />
             </slot>
+
+            <template v-if="item.error" #error>
+              <component
+                v-if="isObject(item.error)"
+                :is="getComponent(item.error?.compType)"
+                v-bind="(item.error?.compProps as Record<string, any>) || {}"
+              />
+
+              <slot v-else :name="item.error">{{ item.error }}</slot>
+            </template>
           </el-form-item>
         </template>
       </template>

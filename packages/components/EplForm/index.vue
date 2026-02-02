@@ -22,7 +22,7 @@ const props = defineProps({
   },
 });
 
-const { getComponent: getComponentInput } = useDynamicComponent('input');
+const { getComponent: getComponentI } = useDynamicComponent('input');
 const { getComponent } = useDynamicComponent();
 
 const items = computed(() => {
@@ -56,7 +56,7 @@ defineExpose({} as ComponentInstance<typeof ElForm>);
 
           <slot :name="item.prop">
             <component
-              :is="getComponentInput(item.compType)"
+              :is="getComponentI(item.compType)"
               :model-value="get(formData, item.prop)"
               @update:model-value="value => set(formData, item.prop, value)"
               v-bind="(item.compProps as Record<string, any>) || {}"
