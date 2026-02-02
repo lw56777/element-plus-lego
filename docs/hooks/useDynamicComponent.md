@@ -15,13 +15,17 @@
 <template>
   <div>
     <!-- 通过字符串渲染组件 -->
-    <component :is="getComponent('input')" v-model="value" placeholder="请输入" />
-    
+    <component
+      :is="getComponent('input')"
+      v-model="value"
+      placeholder="请输入"
+    />
+
     <!-- 通过组件对象渲染 -->
     <component :is="getComponent(ElButton)" @click="handleClick">
       点击我
     </component>
-    
+
     <!-- 通过渲染函数渲染 -->
     <component :is="getComponent(customRenderer, { text: 'Hello' })" />
   </div>
@@ -36,7 +40,7 @@ const { getComponent } = useDynamicComponent();
 const value = ref('');
 
 // 自定义渲染函数
-const customRenderer = (scope) => {
+const customRenderer = scope => {
   return h('div', { style: 'color: blue;' }, scope.text);
 };
 
@@ -52,11 +56,7 @@ const handleClick = () => {
 <template>
   <div>
     <!-- 使用 EplForm 动态渲染表单 -->
-    <EplForm
-      v-model="formData"
-      :items="formItems"
-      :emits="formEmits"
-    />
+    <EplForm v-model="formData" :items="formItems" :emits="formEmits" />
   </div>
 </template>
 
@@ -71,7 +71,7 @@ const formData = ref({
   name: '',
   age: '',
   email: '',
-  status: 'active'
+  status: 'active',
 });
 
 // 动态表单配置
@@ -81,8 +81,8 @@ const formItems = computed(() => [
     prop: 'name',
     compType: 'input',
     compProps: {
-      placeholder: '请输入姓名'
-    }
+      placeholder: '请输入姓名',
+    },
   },
   {
     label: '年龄',
@@ -90,8 +90,8 @@ const formItems = computed(() => [
     compType: 'input',
     compProps: {
       type: 'number',
-      placeholder: '请输入年龄'
-    }
+      placeholder: '请输入年龄',
+    },
   },
   {
     label: '邮箱',
@@ -99,8 +99,8 @@ const formItems = computed(() => [
     compType: 'input',
     compProps: {
       type: 'email',
-      placeholder: '请输入邮箱'
-    }
+      placeholder: '请输入邮箱',
+    },
   },
   {
     label: '状态',
@@ -110,10 +110,10 @@ const formItems = computed(() => [
       placeholder: '请选择状态',
       options: [
         { label: '启用', value: 'active' },
-        { label: '禁用', value: 'inactive' }
-      ]
-    }
-  }
+        { label: '禁用', value: 'inactive' },
+      ],
+    },
+  },
 ]);
 
 const formEmits = [
@@ -121,12 +121,12 @@ const formEmits = [
     type: 'primary',
     name: '提交',
     nativeType: 'submit',
-    onClick: handleSubmit
+    onClick: handleSubmit,
   },
   {
     name: '重置',
-    onClick: handleReset
-  }
+    onClick: handleReset,
+  },
 ];
 
 const handleSubmit = () => {
@@ -138,7 +138,7 @@ const handleReset = () => {
     name: '',
     age: '',
     email: '',
-    status: 'active'
+    status: 'active',
   };
 };
 </script>
@@ -165,66 +165,61 @@ app.use(ElementPlusLego, { componentMap });
 
 ## API 参数
 
-| 参数 | 类型 | 默认值 | 说明 |
-|------|------|--------|------|
-| initType | `string` | `undefined` | 默认组件类型 |
+| 参数     | 类型     | 默认值      | 说明                                                                                                                                                                                                                                             |
+| -------- | -------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| initType | `string` | `undefined` | 默认组件类型。当 `getComponent(type)` 的 type 为空时，使用 initType 从映射表查找。例如 EplForm 内部使用 `useDynamicComponent('input')`，将未指定 compType 的表单项默认渲染为输入框；label/error 的动态组件则使用无参的 `useDynamicComponent()`。 |
 
 ## 返回值
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
-| componentMap | `Record<string, Component>` | 全局组件映射表 |
-| getComponent | `(type: unknown, scope?: any) => any` | 获取组件函数 |
+| 属性         | 类型                                  | 说明           |
+| ------------ | ------------------------------------- | -------------- |
+| componentMap | `Record<string, Component>`           | 全局组件映射表 |
+| getComponent | `(type: unknown, scope?: any) => any` | 获取组件函数   |
 
 ## 使用场景
 
 ### 1. 动态表单渲染
+
 ```vue
 <template>
-  <EplForm
-    v-model="formData"
-    :items="formItems"
-    :emits="formEmits"
-  />
+  <EplForm v-model="formData" :items="formItems" :emits="formEmits" />
 </template>
 
 <script setup>
 const formItems = [
-  { 
-    label: '姓名', 
-    prop: 'name', 
+  {
+    label: '姓名',
+    prop: 'name',
     compType: 'input',
-    compProps: { placeholder: '请输入姓名' }
+    compProps: { placeholder: '请输入姓名' },
   },
-  { 
-    label: '年龄', 
-    prop: 'age', 
+  {
+    label: '年龄',
+    prop: 'age',
     compType: 'input',
-    compProps: { type: 'number', placeholder: '请输入年龄' }
+    compProps: { type: 'number', placeholder: '请输入年龄' },
   },
-  { 
-    label: '性别', 
-    prop: 'gender', 
+  {
+    label: '性别',
+    prop: 'gender',
     compType: 'select',
-    compProps: { 
+    compProps: {
       placeholder: '请选择性别',
       options: [
         { label: '男', value: 'male' },
-        { label: '女', value: 'female' }
-      ]
-    }
-  }
+        { label: '女', value: 'female' },
+      ],
+    },
+  },
 ];
 </script>
 ```
 
 ### 2. 表格列渲染
+
 ```vue
 <template>
-  <EplTable
-    v-model="tableData"
-    :columns="columns"
-  />
+  <EplTable v-model="tableData" :columns="columns" />
 </template>
 
 <script setup>
@@ -232,7 +227,7 @@ const columns = [
   {
     prop: 'name',
     label: '姓名',
-    compType: 'input'
+    compType: 'input',
   },
   {
     prop: 'status',
@@ -241,22 +236,20 @@ const columns = [
     compProps: {
       options: [
         { label: '启用', value: 'active' },
-        { label: '禁用', value: 'inactive' }
-      ]
-    }
-  }
+        { label: '禁用', value: 'inactive' },
+      ],
+    },
+  },
 ];
 </script>
 ```
 
 ### 3. 条件渲染
+
 ```vue
 <template>
   <div>
-    <component
-      :is="getComponent(componentType)"
-      v-bind="componentProps"
-    />
+    <component :is="getComponent(componentType)" v-bind="componentProps" />
   </div>
 </template>
 
@@ -274,9 +267,10 @@ const componentType = computed(() => {
 `getComponent` 函数支持以下类型的 `type` 参数：
 
 1. **字符串** - 从全局组件映射表中查找
-2. **组件对象** - 直接使用传入的组件
-3. **渲染函数** - 调用函数并传入 scope 参数
-4. **其他** - 返回默认的文本渲染组件
+2. **数字** - 作为 key 从全局组件映射表中查找（与字符串行为一致）
+3. **组件对象** - 直接使用传入的组件
+4. **渲染函数** - 调用函数并传入 scope 参数
+5. **其他** - 返回默认的文本渲染组件
 
 ## 默认组件
 
