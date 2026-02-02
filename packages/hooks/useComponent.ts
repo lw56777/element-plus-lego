@@ -1,5 +1,5 @@
-import { h, ref, reactive, Component } from 'vue';
-import type { ComponentInstance, Ref } from 'vue';
+import { h, ref, reactive } from 'vue';
+import type { ComponentInstance, Ref, Component } from 'vue';
 
 function proxyComponentInstance<TInstance extends object = object>() {
   const instance = ref<TInstance>();
