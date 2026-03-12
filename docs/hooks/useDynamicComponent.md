@@ -62,8 +62,7 @@ const handleClick = () => {
 
 <script setup>
 import { computed, ref } from 'vue';
-import { EplForm } from '@element-plus-lego/components';
-import { useDynamicComponent } from 'element-plus-lego';
+import { EplForm, useDynamicComponent } from 'element-plus-lego';
 
 const { getComponent } = useDynamicComponent();
 

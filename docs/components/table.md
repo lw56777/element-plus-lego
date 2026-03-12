@@ -153,7 +153,7 @@ const columns = computed(() => [
 <script setup lang="ts">
 import { h, ref, computed } from 'vue';
 import { ElTag, ElSwitch } from 'element-plus';
-import { EplTable, type TTableColumn } from '@element-plus-lego/components';
+import { EplTable, type TTableColumn } from 'element-plus-lego';
 
 const tableData = ref([
   {

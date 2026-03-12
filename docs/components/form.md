@@ -194,7 +194,7 @@ const [Demo4FormComp, demo4FormRef] = useEplForm({
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import type { FormRules } from 'element-plus';
-import { EplForm, type TFormItem } from '@element-plus-lego/components';
+import { EplForm, type TFormItem } from 'element-plus-lego';
 
 const formData = ref({
   name: '',
@@ -270,9 +270,9 @@ const formRef = ref();
 <script setup lang="ts">
 import { h, ref, computed } from 'vue';
 import { ElTooltip, ElIcon } from 'element-plus';
-import { WarningFilled } from '@element-plus/icons-vue';
-import { EplForm, type TFormItem } from '@element-plus-lego/components';
 import type { FormRules } from 'element-plus';
+import { WarningFilled } from '@element-plus/icons-vue';
+import { EplForm, type TFormItem } from 'element-plus-lego';
 
 const formData = ref({
   name: '',
@@ -348,7 +348,7 @@ const formRef = ref();
 <script setup lang="ts">
 import { h, ref, computed } from 'vue';
 import { ElSwitch, type FormRules } from 'element-plus';
-import { EplForm, type TFormItem } from '@element-plus-lego/components';
+import { EplForm, type TFormItem } from 'element-plus-lego';
 
 const formData = ref({
   gender: 0,
@@ -428,7 +428,7 @@ const formRef = ref();
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import type { FormRules } from 'element-plus';
-import { EplForm, type TFormItem } from '@element-plus-lego/components';
+import { EplForm, type TFormItem } from 'element-plus-lego';
 
 const formData = ref({
   desc: '',

@@ -97,7 +97,7 @@ const handleDialog = () => {
 <script setup lang="ts">
 import { h, ref } from 'vue';
 import { ElMessage, ElSwitch } from 'element-plus';
-import { useEplDialog } from '@element-plus-lego/components';
+import { useEplDialog } from 'element-plus-lego';
 
 const DialogContent = {
   setup(props, { expose }) {

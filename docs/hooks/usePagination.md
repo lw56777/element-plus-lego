@@ -28,8 +28,7 @@
 
 <script setup>
 import { computed } from 'vue';
-import { EplTable } from '@element-plus-lego/components';
-import { usePagination } from 'element-plus-lego';
+import { EplTable, usePagination } from 'element-plus-lego';
 
 // 模拟 API 请求
 const fetchUsers = async params => {
@@ -121,8 +120,7 @@ const columns = computed(() => [
 
 <script setup>
 import { computed, ref } from 'vue';
-import { EplTable, EplSearch } from '@element-plus-lego/components';
-import { usePagination } from 'element-plus-lego';
+import { EplTable, EplSearch, usePagination } from 'element-plus-lego';
 
 // 搜索参数
 const searchParams = ref({

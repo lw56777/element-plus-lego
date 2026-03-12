@@ -71,7 +71,7 @@ const onRefresh = () => {
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { ElMessage } from 'element-plus';
-import { EplSearch } from '@element-plus-lego/components';
+import { EplSearch } from 'element-plus-lego';
 
 const params = ref({
   keywords: '',
@@ -149,7 +149,7 @@ EplSearch 组件支持两种类型的插槽，用于自定义搜索条件和操�
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { ElMessage, ElInput, ElButton } from 'element-plus';
-import { EplSearch } from '@element-plus-lego/components';
+import { EplSearch } from 'element-plus-lego';
 
 const params = ref({
   keywords: '',

@@ -57,7 +57,9 @@ import { ref, computed } from 'vue';
 import { useShortcuts } from 'element-plus-lego';
 
 const singleDate = ref('');
-const { shortcuts } = useShortcuts(computed(() => singleDate.value ? [singleDate.value] : []));
+const { shortcuts } = useShortcuts(
+  computed(() => (singleDate.value ? [singleDate.value] : [])),
+);
 </script>
 ```
 
@@ -70,7 +72,7 @@ const { shortcuts } = useShortcuts(computed(() => singleDate.value ? [singleDate
   <div>
     <h4>无限回跳演示</h4>
     <p>当前选中：{{ dateRange[0] }} 至 {{ dateRange[1] }}</p>
-    
+
     <el-date-picker
       v-model="dateRange"
       type="daterange"
@@ -79,13 +81,17 @@ const { shortcuts } = useShortcuts(computed(() => singleDate.value ? [singleDate
       start-placeholder="开始日期"
       end-placeholder="结束日期"
     />
-    
+
     <div style="margin-top: 20px;">
       <h5>操作说明：</h5>
       <ol>
         <li>先选择"本月"，假设选中了 2024-01-01 至 2024-01-31</li>
-        <li>再次点击"上月"，会基于 2024-01-01 倒退到 2023-12-01 至 2023-12-31</li>
-        <li>继续点击"过去30天"，会基于 2023-12-01 倒退到 2023-11-01 至 2023-12-01</li>
+        <li>
+          再次点击"上月"，会基于 2024-01-01 倒退到 2023-12-01 至 2023-12-31
+        </li>
+        <li>
+          继续点击"过去30天"，会基于 2023-12-01 倒退到 2023-11-01 至 2023-12-01
+        </li>
         <li>这样实现了无限回跳功能</li>
       </ol>
     </div>
@@ -120,28 +126,28 @@ const customShortcuts = [
       start.setDate(start.getDate() - 15);
       const end = new Date();
       return [start, end];
-    }
-  }
+    },
+  },
 ];
 </script>
 ```
 
 ## 可用的快捷选项
 
-| 选项 | 说明 | 时间范围 | 回跳特性 |
-|------|------|----------|----------|
-| 今日 | 今天 00:00:00 到 23:59:59 | 当天 | ❌ 不支持回跳 |
-| 昨日 | 昨天 00:00:00 到 23:59:59 | 前一天 | ✅ 支持回跳 |
-| 本周 | 本周一 00:00:00 到今天 23:59:59 | 周一到今天 | ❌ 不支持回跳 |
-| 上周 | 上周一 00:00:00 到上周日 23:59:59 | 上一周 | ✅ 支持回跳 |
-| 本月 | 本月1号 00:00:00 到今天 23:59:59 | 月初到今天 | ❌ 不支持回跳 |
-| 上月 | 上月1号 00:00:00 到上月最后一天 23:59:59 | 上一月 | ✅ 支持回跳 |
-| 过去7天 | 7天前 00:00:00 到今天 23:59:59 | 最近7天 | ✅ 支持回跳 |
-| 过去30天 | 30天前 00:00:00 到今天 23:59:59 | 最近30天 | ✅ 支持回跳 |
-| 本年 | 今年1月1号 00:00:00 到今天 23:59:59 | 年初到今天 | ❌ 不支持回跳 |
-| 上一年 | 去年1月1号 00:00:00 到去年12月31号 23:59:59 | 上一年 | ✅ 支持回跳 |
-| 本季度 | 本季度第一天 00:00:00 到今天 23:59:59 | 季度初到今天 | ❌ 不支持回跳 |
-| 上季度 | 上季度第一天 00:00:00 到上季度最后一天 23:59:59 | 上一季度 | ✅ 支持回跳 |
+| 选项     | 说明                                            | 时间范围     | 回跳特性      |
+| -------- | ----------------------------------------------- | ------------ | ------------- |
+| 今日     | 今天 00:00:00 到 23:59:59                       | 当天         | ❌ 不支持回跳 |
+| 昨日     | 昨天 00:00:00 到 23:59:59                       | 前一天       | ✅ 支持回跳   |
+| 本周     | 本周一 00:00:00 到今天 23:59:59                 | 周一到今天   | ❌ 不支持回跳 |
+| 上周     | 上周一 00:00:00 到上周日 23:59:59               | 上一周       | ✅ 支持回跳   |
+| 本月     | 本月1号 00:00:00 到今天 23:59:59                | 月初到今天   | ❌ 不支持回跳 |
+| 上月     | 上月1号 00:00:00 到上月最后一天 23:59:59        | 上一月       | ✅ 支持回跳   |
+| 过去7天  | 7天前 00:00:00 到今天 23:59:59                  | 最近7天      | ✅ 支持回跳   |
+| 过去30天 | 30天前 00:00:00 到今天 23:59:59                 | 最近30天     | ✅ 支持回跳   |
+| 本年     | 今年1月1号 00:00:00 到今天 23:59:59             | 年初到今天   | ❌ 不支持回跳 |
+| 上一年   | 去年1月1号 00:00:00 到去年12月31号 23:59:59     | 上一年       | ✅ 支持回跳   |
+| 本季度   | 本季度第一天 00:00:00 到今天 23:59:59           | 季度初到今天 | ❌ 不支持回跳 |
+| 上季度   | 上季度第一天 00:00:00 到上季度最后一天 23:59:59 | 上一季度     | ✅ 支持回跳   |
 
 ## 回跳功能说明
 
@@ -150,6 +156,7 @@ const customShortcuts = [
 **不支持回跳的选项：** 今日、本周、本月、本年、本季度
 
 **回跳逻辑：**
+
 - 当用户选择了某个日期后，再次点击支持回跳的快捷选项时
 - 系统会基于当前选中的开始日期（`dateRange[0]`）作为基准点
 - 然后按照快捷选项的逻辑继续倒退时间
@@ -157,19 +164,20 @@ const customShortcuts = [
 
 ## API 参数
 
-| 参数 | 类型 | 默认值 | 说明 |
-|------|------|--------|------|
-| dateRange | `ComputedRef<string[]>` | - | 当前选中的日期范围 |
+| 参数      | 类型                    | 默认值 | 说明               |
+| --------- | ----------------------- | ------ | ------------------ |
+| dateRange | `ComputedRef<string[]>` | -      | 当前选中的日期范围 |
 
 ## 返回值
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
+| 属性      | 类型                                         | 说明         |
+| --------- | -------------------------------------------- | ------------ |
 | shortcuts | `Array<{text: string, value: () => Date[]}>` | 快捷选项数组 |
 
 ## 使用场景
 
 ### 1. 在 EplSearch 中使用
+
 ```vue
 <template>
   <div>
@@ -183,15 +191,16 @@ const customShortcuts = [
 
 <script setup>
 import { computed, ref } from 'vue';
-import { EplSearch } from '@element-plus-lego/components';
-import { useShortcuts } from 'element-plus-lego';
+import { EplSearch, useShortcuts } from 'element-plus-lego';
 
 const searchParams = ref({
   keywords: '',
-  dateRange: []
+  dateRange: [],
 });
 
-const { shortcuts } = useShortcuts(computed(() => searchParams.value.dateRange));
+const { shortcuts } = useShortcuts(
+  computed(() => searchParams.value.dateRange),
+);
 
 const searchItems = computed(() => [
   {
@@ -199,8 +208,8 @@ const searchItems = computed(() => [
     prop: 'keywords',
     compType: 'input',
     compProps: {
-      placeholder: '请输入关键词'
-    }
+      placeholder: '请输入关键词',
+    },
   },
   {
     label: '查询时间',
@@ -210,21 +219,21 @@ const searchItems = computed(() => [
       shortcuts,
       rangeSeparator: '至',
       startPlaceholder: '开始日期',
-      endPlaceholder: '结束日期'
-    }
-  }
+      endPlaceholder: '结束日期',
+    },
+  },
 ]);
 
 const searchEmits = [
   {
     type: 'primary',
     name: '搜索',
-    onClick: handleSearch
+    onClick: handleSearch,
   },
   {
     name: '重置',
-    onClick: handleReset
-  }
+    onClick: handleReset,
+  },
 ];
 
 const handleSearch = () => {
@@ -234,28 +243,25 @@ const handleSearch = () => {
 const handleReset = () => {
   searchParams.value = {
     keywords: '',
-    dateRange: []
+    dateRange: [],
   };
 };
 </script>
 ```
 
 ### 2. 日志分析
+
 ```vue
 <template>
   <div>
-    <EplSearch
-      v-model="logParams"
-      :items="logItems"
-      :emits="logEmits"
-    />
+    <EplSearch v-model="logParams" :items="logItems" :emits="logEmits" />
   </div>
 </template>
 
 <script setup>
 const logParams = ref({
   logLevel: '',
-  dateRange: []
+  dateRange: [],
 });
 
 const { shortcuts } = useShortcuts(computed(() => logParams.value.dateRange));
@@ -271,9 +277,9 @@ const logItems = computed(() => [
         { label: 'ERROR', value: 'error' },
         { label: 'WARN', value: 'warn' },
         { label: 'INFO', value: 'info' },
-        { label: 'DEBUG', value: 'debug' }
-      ]
-    }
+        { label: 'DEBUG', value: 'debug' },
+      ],
+    },
   },
   {
     label: '时间范围',
@@ -283,22 +289,19 @@ const logItems = computed(() => [
       shortcuts,
       rangeSeparator: '至',
       startPlaceholder: '开始时间',
-      endPlaceholder: '结束时间'
-    }
-  }
+      endPlaceholder: '结束时间',
+    },
+  },
 ]);
 </script>
 ```
 
 ### 3. 统计图表
+
 ```vue
 <template>
   <div>
-    <EplSearch
-      v-model="chartParams"
-      :items="chartItems"
-      :emits="chartEmits"
-    />
+    <EplSearch v-model="chartParams" :items="chartItems" :emits="chartEmits" />
     <div ref="chartContainer"></div>
   </div>
 </template>
@@ -306,7 +309,7 @@ const logItems = computed(() => [
 <script setup>
 const chartParams = ref({
   chartType: '',
-  dateRange: []
+  dateRange: [],
 });
 
 const { shortcuts } = useShortcuts(computed(() => chartParams.value.dateRange));
@@ -321,9 +324,9 @@ const chartItems = computed(() => [
       options: [
         { label: '折线图', value: 'line' },
         { label: '柱状图', value: 'bar' },
-        { label: '饼图', value: 'pie' }
-      ]
-    }
+        { label: '饼图', value: 'pie' },
+      ],
+    },
   },
   {
     label: '统计时间',
@@ -333,9 +336,9 @@ const chartItems = computed(() => [
       shortcuts,
       rangeSeparator: '至',
       startPlaceholder: '开始时间',
-      endPlaceholder: '结束时间'
-    }
-  }
+      endPlaceholder: '结束时间',
+    },
+  },
 ]);
 </script>
 ```
