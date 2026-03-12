@@ -480,7 +480,7 @@ const formRef = ref();
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import type { FormRules } from 'element-plus';
-import { useEplForm, type TFormItem } from '@element-plus-lego/components';
+import { useEplForm, type TFormItem } from 'element-plus-lego';
 
 const formData = ref({
   username: '',
