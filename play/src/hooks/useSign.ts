@@ -62,6 +62,13 @@ export function useSignIn() {
 
   const onSignIn = () => {
     formRef.value?.validate()?.then(() => {
+      const user = JSON.parse(
+        sessionStorage.getItem(signInForm.value.username) || '{}',
+      );
+      if (user?.password !== signInForm.value.password) {
+        ElMessage.error('用户名不存在或密码错误');
+        return;
+      }
       ElMessage.success('登录成功');
       router.push({
         name: 'Home',
@@ -108,8 +115,24 @@ export function useSignUp() {
     await formRef.value?.validate();
   };
 
+  const saveUser = () => {
+    const user = sessionStorage.getItem(signUpForm.value.username);
+
+    if (user) {
+      ElMessage.error('用户已存在');
+      return;
+    }
+
+    sessionStorage.setItem(
+      signUpForm.value.username,
+      JSON.stringify(signUpForm.value),
+    );
+    ElMessage.success('注册成功');
+  };
+
   return {
     SignUpFormComp,
     validateSignUpForm,
+    saveUser,
   };
 }

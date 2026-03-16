@@ -10,12 +10,11 @@ useDark({ disableTransition: false });
 const { SignInFormComp, onSignIn } = useSignIn();
 
 // 注册
-const { SignUpFormComp, validateSignUpForm } = useSignUp();
+const { SignUpFormComp, validateSignUpForm, saveUser } = useSignUp();
 
 const onSignUp = () => {
   validateSignUpForm()?.then(() => {
-    ElMessage.success('注册成功');
-    switchToSignIn();
+    saveUser();
   });
 };
 
@@ -55,8 +54,6 @@ const switchToSignIn = () => {
         >
           <h1 class="font-bold text-2xl mb-5">注册</h1>
 
-          <p class="text-sm text-gray-500">随便输点</p>
-
           <SignUpFormComp />
 
           <el-button
@@ -80,8 +77,6 @@ const switchToSignIn = () => {
           class="flex flex-col px-12 h-full justify-center items-center text-center bg-[var(--el-bg-color)]"
         >
           <h1 class="font-bold text-2xl mb-5">登录</h1>
-
-          <p class="text-sm text-gray-500">随便输点</p>
 
           <SignInFormComp />
 
