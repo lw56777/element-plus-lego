@@ -128,6 +128,7 @@ export function useSignUp() {
       JSON.stringify(signUpForm.value),
     );
     ElMessage.success('注册成功');
+    formRef.value?.resetFields();
   };
 
   return {
