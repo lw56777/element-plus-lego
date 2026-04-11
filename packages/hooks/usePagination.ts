@@ -79,8 +79,8 @@ export function usePagination(
       background: true,
       layout: 'total, sizes, prev, pager, next',
       // hideOnSinglePage: data.value?.[totalKey] <= pageSize,
+      total: data.value?.[totalKey] || 0,
       ..._pagination,
-      [totalKey]: data.value?.[totalKey] || 0,
     };
   });
 
