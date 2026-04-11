@@ -53,16 +53,17 @@ export function usePagination(
 ): IUsePaginationReturn {
   const { params: defaultParams, pagination } = options || {};
   const _defaultParams = toRef(defaultParams);
+  const _pagination = {
+    ...globalPagination,
+    ...pagination,
+  };
   const {
     totalKey = 'total',
     pageSizeKey = 'pageSize',
     currentPageKey = 'currentPage',
     pageSize = 10,
     currentPage = 1,
-  } = {
-    ...globalPagination,
-    ...pagination,
-  };
+  } = _pagination;
 
   const { loading, params, data, run, reset } = useRequest(service, {
     ...omit(options, ['params', 'pagination']),
@@ -77,8 +78,8 @@ export function usePagination(
     return {
       background: true,
       layout: 'total, sizes, prev, pager, next',
-      hideOnSinglePage: data.value?.[totalKey] <= pageSize,
-      ...pagination,
+      // hideOnSinglePage: data.value?.[totalKey] <= pageSize,
+      ..._pagination,
       [totalKey]: data.value?.[totalKey] || 0,
     };
   });
