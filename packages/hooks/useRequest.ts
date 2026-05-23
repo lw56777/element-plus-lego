@@ -40,6 +40,7 @@ export function useRequest(
 
   const loading = ref(false);
   const params = toRef(_params);
+  const result: any = ref({});
   const data = ref(initData);
   const error = ref(null);
   const isArr = isArray(service);
@@ -60,7 +61,10 @@ export function useRequest(
 
     Promise.all(queue)
       .then(res => {
-        data.value = isArr ? res.map(item => item) : res[0];
+        result.value = isArr ? res : res[0];
+        data.value = isArr
+          ? res.map(item => item?.data || item)
+          : res[0]?.data || res[0];
       })
       .catch(err => {
         error.value = err;
@@ -86,6 +90,7 @@ export function useRequest(
   return {
     loading,
     params,
+    result,
     data,
     error,
     run,
