@@ -24,16 +24,6 @@ const defaultOptions = {
   params: {},
 };
 
-// 函数重载：当 service 是数组时，params 必须是数组
-export function useRequest(
-  service: TServiceFunction[],
-  options?: IOptionsArray,
-): any;
-// 函数重载：当 service 是单个函数时，params 可以是任意值
-export function useRequest(
-  service: TServiceFunction,
-  options?: IOptionsSingle,
-): any;
 export function useRequest(
   service: TServiceFunction | TServiceFunction[],
   options?: IOptionsSingle | IOptionsArray,
@@ -60,7 +50,9 @@ export function useRequest(
 
     if (isArr) {
       service.forEach((item, index) => {
-        queue.push(item(params.value[index]));
+        queue.push(
+          item(isArray(params.value) ? params.value[index] : params.value),
+        );
       });
     } else {
       queue.push(service(params.value) as Promise<any>);
@@ -68,9 +60,7 @@ export function useRequest(
 
     Promise.all(queue)
       .then(res => {
-        data.value = isArr
-          ? res.map(item => item?.data || item)
-          : res[0]?.data || res[0];
+        data.value = isArr ? res.map(item => item) : res[0];
       })
       .catch(err => {
         error.value = err;
