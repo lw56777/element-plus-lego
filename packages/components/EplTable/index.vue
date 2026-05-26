@@ -50,9 +50,11 @@ defineExpose({} as ComponentInstance<typeof ElTable>);
       </EplTableColumn>
     </el-table>
 
-    <div class="epl-table__pagination">
+    <div
+      v-if="pageProps.total || pageProps.pageCount"
+      class="epl-table__pagination"
+    >
       <el-pagination
-        v-if="pageProps.total || pageProps.pageCount"
         v-model:currentPage="currentPage"
         v-model:page-size="pageSize"
         v-bind="pageProps"
