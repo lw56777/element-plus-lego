@@ -12,7 +12,7 @@ type TProps =
     };
 
 export type TFormItem = Omit<Partial<FormItemProps>, 'label' | 'error'> & {
-  label: TProps;
+  label?: TProps;
   hidden?: boolean;
   span?: number;
   compType?: TCompType; // 动态组件类型
