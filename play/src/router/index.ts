@@ -62,6 +62,15 @@ const routes: RouteRecordRaw[] = [
             },
           },
           {
+            path: '/basic/input-example',
+            name: 'BasicInputExample',
+            component: () => import('~/views/basic/InputExample.vue'),
+            meta: {
+              title: '输入框示例',
+              icon: 'Money',
+            },
+          },
+          {
             path: '/basic/table-example',
             name: 'BasicTableExample',
             component: () => import('~/views/basic/TableExample.vue'),

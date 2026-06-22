@@ -5,3 +5,4 @@ export * from './EplTableColumn';
 export * from './EplForm';
 export * from './EplDialog';
 export * from './EplDescriptions';
+export * from './EplInputNumber';
