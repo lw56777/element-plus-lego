@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Ref, getCurrentInstance, onMounted } from 'vue';
-import type { ComponentInstance } from 'vue';
+import { getCurrentInstance, onMounted } from 'vue';
+import type { Ref, ComponentInstance } from 'vue';
 import { ElInputNumber } from 'element-plus';
 import { isNumber } from '@element-plus-lego/utils';
 
