@@ -33,10 +33,32 @@ defineExpose({} as ComponentInstance<typeof ElInputNumber>);
 </template>
 
 <style lang="scss">
+@use 'sass:map';
+@use 'element-plus/theme-chalk/src/common/var.scss' as *;
+
+@mixin input-padding($size) {
+  padding: $border-width map.get($input-padding-horizontal, $size) -
+    $border-width;
+}
+
 .epl-input-number {
   &.is-without-controls {
-    .el-input__wrapper {
-      padding: 1px 11px;
+    .el-input {
+      .el-input__wrapper {
+        @include input-padding('default');
+      }
+
+      &--large {
+        .el-input__wrapper {
+          @include input-padding('large');
+        }
+      }
+
+      &--small {
+        .el-input__wrapper {
+          @include input-padding('small');
+        }
+      }
     }
   }
 }
